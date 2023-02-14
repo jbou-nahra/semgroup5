@@ -37,8 +37,9 @@ A request for World population statistics based on continent is required directl
 
 1. A need arises for World population statistics report.
 2. Data Analyst acquires desired continent for report.
-3. Data Analyst extracts populated countries for that continent.
-4. Data Analyst provides report organized from largest to smallest popoulated countries.
+3. Data Analyst makes request for data on application.
+4. Data Analyst extracts populated countries for that continent.
+5. Data Analyst provides report organized from largest to smallest popoulated countries.
 
 ## EXTENSIONS
 
