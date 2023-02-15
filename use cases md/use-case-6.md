@@ -16,7 +16,7 @@ Primary task.
 
 ### Preconditions
 
-We know the desired number N . Database contains current population data for all countries in the world
+We know the desired number N and we know the region. Database contains current population data for all countries in the world
 
 ### Success End Condition
 
