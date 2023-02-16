@@ -1,0 +1,19 @@
+@startuml
+
+actor DA as "Data Analyst"
+
+rectangle Database
+
+rectangle "World Population Data System" {
+    usecase UC1 as "Make request for world
+    population data based
+     on region"
+
+    usecase UCa as "Extract population data"
+
+    DA - UC1
+    UC1 ..> UCa : include
+    UC1 - Database
+}
+
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+
+actor DA as "Data Analyst"
+
+rectangle Database
+
+rectangle "World Population Data System" {
+    usecase UC1 as "Get All the cities in a continent  in the world by population from largest to smallest "
+
+    usecase UCa as "Print Cities  "
+
+    DA - UC1
+    UC1 ..> UCa : include
+    UC1 - Database
+}
+@enduml
