@@ -4,7 +4,7 @@
 
 ### Goal in Context
 
-As a *data analyst * I want * to produce a report on All the cities in the world organised by population from the largest to the smallest* so that *i can support the survey and census reporting of the organisation.*
+As a *data analyst* I want * to produce a report on All the cities in the world organised by population from the largest to the smallest* so that *I can support the survey and census reporting of the organisation.*
 
 ### Scope
 
@@ -36,15 +36,15 @@ A request for population information is sent from survey and census to the Data 
 
 ## MAIN SUCCESS SCENARIO
 
-1. survey and census request population information cities in the world in descending order 
+1. survey and census request population information of all  cities in the world in descending order 
 2. Data Analyst captures names of cities to get their population information
-3. Data Analyst  extracts all cities population information an places them in  descending order 
+3. Data Analyst  extracts all cities population information and places them in  descending order 
 4. Data Analyst provides report to survey and census 
 
 ## EXTENSIONS
+3. **Population information may not be available for all cities**
+   i. Report would be produce with cities having a null value 
 
-3. **Data does not exist for all countries**:
-    1. Data Analyst informs survey and census department no role exists.
 
 ## SUB-VARIATIONS
 
