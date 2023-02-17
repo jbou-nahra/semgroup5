@@ -42,7 +42,7 @@ A request for population information is sent from survey and census to the Data 
 4. Data Analyst provides report to survey and census  department 
 
 ## EXTENSIONS
-2. **Continent  does not  exit.**
+2. **Continent  does not  exist.**
    i. Data Analyst informs survey and census that this continent  does not exist or is not available.
 
 3. **Population information may not be available for all cities**

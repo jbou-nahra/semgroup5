@@ -42,7 +42,7 @@ A request for population information is sent from survey and census to the Data 
 4. Data Analyst provides report to survey and census 
 
 ## EXTENSIONS
-2. **Region does not  exit.**
+2. **Region does not  exist.**
    i. Data Analyst informs survey and census that this region does  not exist or is not available.
 
 3. **Population information may not be available for all cities**
