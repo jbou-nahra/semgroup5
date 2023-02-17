@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+actor DA as "Data Analyst"
+
+rectangle Database
+
+rectangle " World Population Data System" {
+usecase UC15 as "Get the top N populated cities in a country"
+
+usecase UCa as " print the top N populated cities in a country"
+
+DA - UC15
+UC15..> UCa : include
+UC15- Database
+
+}
+
+@enduml
