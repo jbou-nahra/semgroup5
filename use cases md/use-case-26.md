@@ -4,7 +4,7 @@
 
 ### Goal in Context
 
-As a *data analyst* I want the *to produce a report on the population of the world* so that *I can support the survey and census reporting of the organisation.*
+As a *data analyst* I want  *to produce a report on the population of the world* so that *I can support the survey and census reporting of the organisation.*
 
 ### Scope
 
