@@ -5,11 +5,10 @@ actor DA as "Data Analyst"
 rectangle Database
 
 rectangle "World Population Data System" {
-    usecase UC1 as "Get All the cities in the world organised
-    by population from the largest to the smallest
+    usecase UC1 as "Get  population of a  district
 "
 
-    usecase UCa as "Print Cities  Data "
+    usecase UCa as "Print   population data "
 
     DA - UC1
     UC1 ..> UCa : include
