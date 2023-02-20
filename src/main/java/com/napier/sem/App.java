@@ -1,6 +1,7 @@
 package com.napier.sem;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class App
 {
@@ -69,6 +70,51 @@ public class App
         }
     }
 
+    public ArrayList<Country> getAllCountries()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT Name, Population "
+                    +"FROM country "
+                    +"ORDER BY Population DESC";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Extract employee information
+            ArrayList<Country> countries = new ArrayList<>();
+            while (rset.next())
+            {
+                Country place = new Country();
+                place.country_name = rset.getString("Name");
+                place.country_population = rset.getInt("Population");
+                countries.add(place);
+            }
+            return countries;
+
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country details");
+            return null;
+        }
+    }
+
+    public static void printCountries(ArrayList<Country> countries)
+    {
+        System.out.println(String.format("%-30s %-15s", "Country", "Population"));
+
+        for (Country place : countries)
+        {
+            String place_string =
+                    String.format("%-30s %-15s", place.country_name, place.country_population);
+                System.out.println(place_string);
+        }
+    }
+
     public static void main(String[] args)
     {
         // Create new Application
@@ -77,8 +123,13 @@ public class App
         // Connect to database
         a.connect();
 
+        ArrayList<Country> countries = a.getAllCountries();
+        printCountries(countries);
+
         // Disconnect from database
         a.disconnect();
     }
+
+
 
 }
