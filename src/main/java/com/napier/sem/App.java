@@ -1,6 +1,7 @@
 package com.napier.sem;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class App
 {
@@ -77,8 +78,71 @@ public class App
         // Connect to database
         a.connect();
 
+        // Extract cities information
+        ArrayList<City> cities = a.getAllcities();
+
+        //display  cities information
+        a.printCities(cities);
+
         // Disconnect from database
         a.disconnect();
+
+
     }
+
+
+
+
+    public ArrayList<City> getAllcities()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT city.name, country.name, city.district, city.population  "
+                            + "FROM city, country "
+                            + "WHERE  city.countrycode = country.code   "
+                            + "ORDER BY population DESC ";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Extract city information
+            ArrayList<City> cities = new ArrayList<City>();
+            while (rset.next())
+            {
+                City city = new City();
+                city.city_name = rset.getString("city.name");
+                city.country_name = rset.getString("country.name");
+                city.district = rset.getString("city.district");
+                city.population = rset.getInt("city.population");
+                cities.add(city);
+            }
+            return cities ;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get cities details");
+            return null;
+        }
+    }
+
+
+
+    public void printCities(ArrayList<City> cities)
+    {
+        // Print header
+        System.out.println(String.format("%-30s %-30s %-30s %-30s", "City name", "Country name", " district", "population"));
+
+        for (City city : cities)
+        {
+            String city_string =
+                    String.format("%-30s %-30s %-30s %-30s",
+                            city.city_name, city.country_name, city.district,city.population);
+            System.out.println(city_string);
+        }
+    }
+
 
 }
