@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+actor DA as "Data Analyst"
+
+rectangle Database
+
+rectangle " World Population Data System" {
+usecase UC17 as "Get all capital cities in the world organized by largest population to smallest"
+
+usecase UCa as " print all capital cities"
+
+DA - UC17
+UC17..> UCa : include
+UC17- Database
+
+}
+
+@enduml
