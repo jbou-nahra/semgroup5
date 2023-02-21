@@ -41,7 +41,7 @@ public class App
             }
             catch (SQLException sqle)
             {
-                System.out.println("Failed to connect to database attempt " + Integer.toString(i));
+                System.out.println("Failed to connect to database attempt " + i);
                 System.out.println(sqle.getMessage());
             }
             catch (InterruptedException ie)
@@ -80,18 +80,20 @@ public class App
 
         // Extract cities information
         ArrayList<City> cities = a.getAllcities();
+        // Extract Country information
+        ArrayList<Country> countries = a.getAllCountries();
 
         //display  cities information
         a.printCities(cities);
+
+        //display countries information
+        a.printCountries(countries);
 
         // Disconnect from database
         a.disconnect();
 
 
     }
-
-
-
 
     public ArrayList<City> getAllcities()
     {
@@ -103,7 +105,7 @@ public class App
             String strSelect =
                     "SELECT city.name, country.name, city.district, city.population  "
                             + "FROM city, country "
-                            + "WHERE  city.countrycode = country.code   "
+                            + "WHERE  city.CountryCode = country.code   "
                             + "ORDER BY population DESC ";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
@@ -128,12 +130,50 @@ public class App
         }
     }
 
+    public ArrayList<Country> getAllCountries()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT country.Name, country.Population, country.Code, country.Continent, country.Region, city.Name "
+                            +"FROM country, city "
+                            +"WHERE country.Capital = city.ID "
+                            +"ORDER BY Population DESC";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Extract employee information
+            ArrayList<Country> countries = new ArrayList<>();
+            while (rset.next())
+            {
+                Country place = new Country();
+                place.country_name = rset.getString("country.Name");
+                place.population = rset.getInt("country.Population");
+                place.capitalstring = rset.getString("city.Name");
+                place.country_code = rset.getString("country.Code");
+                place.continent_name = rset.getString("country.Continent");
+                place.region_name = rset.getString("country.Region");
+                countries.add(place);
+            }
+            return countries;
+
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country details");
+            return null;
+        }
+    }
+
 
 
     public void printCities(ArrayList<City> cities)
     {
         // Print header
-        System.out.println(String.format("%-30s %-30s %-30s %-30s", "City name", "Country name", " district", "population"));
+        System.out.printf("%-30s %-30s %-30s %-30s%n", "City name", "Country name", " district", "population");
 
         for (City city : cities)
         {
@@ -141,6 +181,18 @@ public class App
                     String.format("%-30s %-30s %-30s %-30s",
                             city.city_name, city.country_name, city.district,city.population);
             System.out.println(city_string);
+        }
+    }
+
+    public void printCountries(ArrayList<Country> countries)
+    {
+        System.out.printf("%-5s %-40s %-20s %-30s %-15s %-20s%n", "Code", "Country", "Continent", "Region", "Population", "Capital");
+
+        for (Country place : countries)
+        {
+            String place_string =
+                    String.format("%-5s %-40s %-20s %-30s %-15s %-20s",place.country_code, place.country_name, place.continent_name, place.region_name, place.population, place.capitalstring);
+            System.out.println(place_string);
         }
     }
 

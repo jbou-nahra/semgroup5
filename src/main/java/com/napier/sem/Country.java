@@ -84,6 +84,11 @@ public class Country {
      * */
     public int capital;
 
+    /**
+     * member to hold capital as string
+     * */
+    public String capitalstring;
+
 
 
     /**
