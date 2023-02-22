@@ -8,7 +8,17 @@ public class App
     /**
      * Connection to MySQL database.
      */
-    private Connection con = null;
+    static private Connection con = null;
+
+    /**
+     * Method to get DB Connecton
+     * */
+
+     static public Connection getDBConnection()
+     {
+         return con;
+     }
+
 
     /**
      * Connect to the MySQL database.
