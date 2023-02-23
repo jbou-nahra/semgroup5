@@ -89,15 +89,22 @@ public class App
         a.connect();
 
         // Extract cities information
-        ArrayList<City> cities = a.getAllcities();
+    //    ArrayList<City> cities = a.getAllcities();
         // Extract Country information
-        ArrayList<Country> countries = a.getAllCountries();
+    //    ArrayList<Country> countries = a.getAllCountries();
 
         //display  cities information
-        a.printCities(cities);
+       // a.printCities(cities);
 
         //display countries information
-        a.printCountries(countries);
+      //  a.printCountries(countries);
+
+        Report10To13 report10to13 = new Report10To13();
+        report10to13.getReport10(); //produce a report on All the cities in a country organized by largest population to smallest
+        report10to13.getReport11(); // produce a report on All the cities in a district organized by largest population to smallest
+        report10to13.getReport12(); //produce a report on The Top N populated cities in the world where N is provided by the user
+        report10to13.getReport13(); //produce a report on The Top N populated cities in the continent where N is provided by the user
+
 
         // Disconnect from database
         a.disconnect();
