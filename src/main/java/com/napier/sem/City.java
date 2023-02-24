@@ -36,6 +36,12 @@ public class City {
      * */
     public int population;
 
+/**
+ Displays a report on All the cities in a district organized by largest population to smallest
+ @param cities A list of cities
+ @param reportDes A description of the report being printed e.g A list of cities in a country organized by population from largest to smallest
+ */
+
     static public void printReport(ArrayList<City> cities, String reportDes)
     {
         System.out.printf ( "%n%s%n%n", reportDes);
