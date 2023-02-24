@@ -21,20 +21,20 @@ public class Report10To13 {
     }
 
 
-   /*
-   getReport10 gets a report on All the cities in a country organized by largest population to smallest.
-    */
+    /*
+    getReport10 gets a report on All the cities in a country organized by largest population to smallest.
+     */
     //public ArrayList<City> getReport10()
-   public void getReport10()
+    public void getReport10()
 
     {
         ResultSet rset = null;
         Statement stmt = null;
-     // String countryCode ="";
+        // String countryCode ="";
         String countryName = "United Kingdom";
         ArrayList<City> cities = new ArrayList<>();
 
-        System.out.printf("\nA report on All the cities in a country (%s) organized by largest population to smallest \n\n", countryName );
+        String reportDes = String.format("A report on All the cities in a country (%s) organized by largest population to smallest",countryName );
 
 
         try
@@ -45,12 +45,12 @@ public class Report10To13 {
             // Create string for SQL statement
 
             String strSelect =
-                "SELECT ID, city.Name, country.Name, CountryCode, District, city.Population"
-                        + " FROM city "
-                        + " INNER JOIN country"
-                        + " ON city.CountryCode = country.Code"
-                        + " WHERE country.Name = '" + countryName + "'"
-                        + " ORDER BY city.population DESC ";
+                    "SELECT ID, city.Name, country.Name, CountryCode, District, city.Population"
+                            + " FROM city "
+                            + " INNER JOIN country"
+                            + " ON city.CountryCode = country.Code"
+                            + " WHERE country.Name = '" + countryName + "'"
+                            + " ORDER BY city.population DESC ";
 
             // Execute SQL statement
             rset = stmt.executeQuery(strSelect);
@@ -68,7 +68,7 @@ public class Report10To13 {
                 cities.add(city);
             }
 
-            displayReport(cities);
+            displayReport(cities, reportDes);
 
 //            return cities;
         }
@@ -82,7 +82,7 @@ public class Report10To13 {
         {
             try { if (rset != null) rset.close(); } catch (Exception e) {System.out.println(e.getMessage());}
             try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(e.getMessage());}
-       //     try { if (con != null) con.close(); } catch (Exception e) {};
+            //     try { if (con != null) con.close(); } catch (Exception e) {};
 
         }
 
@@ -100,7 +100,7 @@ public class Report10To13 {
 
         ArrayList<City> cities = new ArrayList<>();
 
-        System.out.printf( "\nA report on All the cities in a district (%s) organized by largest population to smallest \n\n", district );
+        String reportDes = String.format( "A report on All the cities in a district (%s) organized by largest population to smallest \n\n", district );
 
         try
         {
@@ -114,6 +114,7 @@ public class Report10To13 {
                             + " FROM city "
                             + " WHERE District = '" + district + "'"
                             + " ORDER BY population DESC ";
+
 
             // Execute SQL statement
             rset = stmt.executeQuery(strSelect);
@@ -131,7 +132,7 @@ public class Report10To13 {
             }
 
 
-            displayReport(cities);
+            displayReport(cities, reportDes);
 
 //            return cities;
         }
@@ -160,8 +161,9 @@ public class Report10To13 {
 
         int n = 10;
 
-     // n = Integer.parseInt( System.console().readLine("Please Enter N: ") );
-        System.out.printf("\nA report on The Top N (%s) populated cities in the world where N is provided by the user \n\n", n);
+        // n = Integer.parseInt( System.console().readLine("Please Enter N: ") );
+        //       System.out.printf("\nA report on The Top N (%s) populated cities in the world where N is provided by the user \n\n", n);
+        String reportDes =  "A report on The Top N (%s) populated cities in the world where N is provided by the user \n\n";
 
         ArrayList<City> cities = new ArrayList<>();
 
@@ -192,10 +194,10 @@ public class Report10To13 {
                 city.population = rset.getInt("Population");
                 cities.add(city);
             }
- //           else
- //               return null;
+            //           else
+            //               return null;
 
-            displayReport( cities);
+            displayReport( cities, reportDes);
 //            return cities;
         }
         catch (Exception e)
@@ -225,9 +227,7 @@ public class Report10To13 {
         int n = 10;
         String continent = "Africa";
 
-     // continent = System.console().readLine("Please Enter Continent: ");
-
-        System.out.printf("\nA report on The Top N (%s) populated cities in the continent (%s) where N is provided by the user \n\n",n,continent);
+        String reportDes = String.format("A report on The Top N (%s) populated cities in the continent (%s) where N is provided by the user",n,continent);
 
         ArrayList<City> cities = new ArrayList<>();
 
@@ -263,9 +263,9 @@ public class Report10To13 {
             }
 
 
-            displayReport(cities);
+            City.printReport(cities, reportDes); ;
 
-//            return cities;
+            // return cities;
         }
         catch (Exception e)
         {
@@ -283,32 +283,40 @@ public class Report10To13 {
     }
 
 
-    /*
-      Displays a report on All the cities in a district organized by largest population to smallest
+    /**
+     Displays a report on All the cities in a district organized by largest population to smallest
+     @param cities A list of cities
+     @param reportDes A description of the report being printed e.g A list of cities in a country organized by population from largest to smallest
      */
+    public void displayReport(ArrayList<City> cities, String reportDes)
+    {
+        System.out.printf ( "%n", reportDes);
+        System.out.printf("%n%n%-30s %-30s %-30s %-30s%n", "City Name", "Country Name", " District", "Population");
+        System.out.printf("%-30s %-30s %-30s %-30s%n", "=========", "============", " ========", "==========");
+
+        for (City city : cities)
+        {
+            System.out.printf("%-30s %-30s %-30s %-30s%n",
+                    city.city_name, city.country_name, city.district, city.population);
+
+        }
+    }
+
     public void displayReport(ArrayList<City> cities)
     {
-
         System.out.printf("%-30s %-30s %-30s %-30s%n", "City Name", "Country Name", " District", "Population");
-        System.out.printf("%-30s %-30s %-30s %-30s%n"  , "=========", "============", " ========", "==========");
+        System.out.printf("%-30s %-30s %-30s %-30s%n", "=========", "============", " ========", "==========");
 
 
         for (City city : cities)
-            {
-                try
-                {
-                    System.out.printf("%-30s %-30s %-30s %-30s%n",
-                            city.city_name, city.country_name, city.district, city.population);
-                }catch (Exception e)
-                {
-                    System.out.println(e.getMessage());
-                }
+        {
+            System.out.printf("%-30s %-30s %-30s %-30s%n",
+                    city.city_name, city.country_name, city.district, city.population);
 
-
-            }
         }
-
-
     }
+
+
+}
 
 
