@@ -54,8 +54,7 @@ public class Report10To13 {
 
             // Execute SQL statement
             rset = stmt.executeQuery(strSelect);
-            // Return new employee if valid.
-            // Check one is returned
+
             while (rset.next())
             {
                 City city = new City();
@@ -68,14 +67,12 @@ public class Report10To13 {
                 cities.add(city);
             }
 
-            displayReport(cities, reportDes);
+            City.printReport(cities, reportDes);
 
-//            return cities;
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get city details");
 
         }
         finally
@@ -100,7 +97,7 @@ public class Report10To13 {
 
         ArrayList<City> cities = new ArrayList<>();
 
-        String reportDes = String.format( "A report on All the cities in a district (%s) organized by largest population to smallest \n\n", district );
+        String reportDes = String.format( "A report on All the cities in a district (%s) organized by largest population to smallest", district );
 
         try
         {
@@ -110,10 +107,11 @@ public class Report10To13 {
             // Create string for SQL statement
 
             String strSelect =
-                    "SELECT ID, Name, CountryCode, District, Population"
+                    "SELECT ID, city.Name, country.Name, CountryCode, District, city.Population"
                             + " FROM city "
+                            + "INNER JOIN country on city.CountryCode = country.code"
                             + " WHERE District = '" + district + "'"
-                            + " ORDER BY population DESC ";
+                            + " ORDER BY city.population DESC ";
 
 
             // Execute SQL statement
@@ -128,18 +126,16 @@ public class Report10To13 {
                 city.country_code = rset.getString("CountryCode");
                 city.district = rset.getString("District");
                 city.population = rset.getInt("Population");
+                city.country_name = rset.getString("country.Name");
                 cities.add(city);
             }
 
+            City.printReport(cities, reportDes);
 
-            displayReport(cities, reportDes);
-
-//            return cities;
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get city details");
 
         }
         finally
@@ -163,7 +159,7 @@ public class Report10To13 {
 
         // n = Integer.parseInt( System.console().readLine("Please Enter N: ") );
         //       System.out.printf("\nA report on The Top N (%s) populated cities in the world where N is provided by the user \n\n", n);
-        String reportDes =  "A report on The Top N (%s) populated cities in the world where N is provided by the user \n\n";
+        String reportDes =  String.format("A report on The Top N (%s) populated cities in the world where N is provided by the user",n);
 
         ArrayList<City> cities = new ArrayList<>();
 
@@ -175,15 +171,15 @@ public class Report10To13 {
             // Create string for SQL statement
 
             String strSelect =
-                    "SELECT ID, Name, CountryCode, District, Population"
+                    "SELECT ID, city.Name, country.Name, CountryCode, District, city.Population"
                             + " FROM city "
-                            + " ORDER BY population DESC "
+                            + " INNER JOIN country on city.CountryCode = country.Code"
+                            + " ORDER BY city.population DESC "
                             + " Limit " + n;
 
             // Execute SQL statement
             rset = stmt.executeQuery(strSelect);
-            // Return new employee if valid.
-            // Check one is returned
+
             while (rset.next())
             {
                 City city = new City();
@@ -192,13 +188,13 @@ public class Report10To13 {
                 city.country_code = rset.getString("CountryCode");
                 city.district = rset.getString("District");
                 city.population = rset.getInt("Population");
+                city.country_name = rset.getString("country.Name");
+
                 cities.add(city);
             }
-            //           else
-            //               return null;
 
-            displayReport( cities, reportDes);
-//            return cities;
+            City.printReport(cities, reportDes);
+
         }
         catch (Exception e)
         {
@@ -248,8 +244,7 @@ public class Report10To13 {
 
             // Execute SQL statement
             rset = stmt.executeQuery(strSelect);
-            // Return new employee if valid.
-            // Check one is returned
+
             while (rset.next())
             {
                 City city = new City();
@@ -263,14 +258,13 @@ public class Report10To13 {
             }
 
 
-            City.printReport(cities, reportDes); ;
+            City.printReport(cities, reportDes);
 
-            // return cities;
+
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get city details");
 
         }
         finally
@@ -282,39 +276,6 @@ public class Report10To13 {
         }
     }
 
-
-    /**
-     Displays a report on All the cities in a district organized by largest population to smallest
-     @param cities A list of cities
-     @param reportDes A description of the report being printed e.g A list of cities in a country organized by population from largest to smallest
-     */
-    public void displayReport(ArrayList<City> cities, String reportDes)
-    {
-        System.out.printf ( "%n", reportDes);
-        System.out.printf("%n%n%-30s %-30s %-30s %-30s%n", "City Name", "Country Name", " District", "Population");
-        System.out.printf("%-30s %-30s %-30s %-30s%n", "=========", "============", " ========", "==========");
-
-        for (City city : cities)
-        {
-            System.out.printf("%-30s %-30s %-30s %-30s%n",
-                    city.city_name, city.country_name, city.district, city.population);
-
-        }
-    }
-
-    public void displayReport(ArrayList<City> cities)
-    {
-        System.out.printf("%-30s %-30s %-30s %-30s%n", "City Name", "Country Name", " District", "Population");
-        System.out.printf("%-30s %-30s %-30s %-30s%n", "=========", "============", " ========", "==========");
-
-
-        for (City city : cities)
-        {
-            System.out.printf("%-30s %-30s %-30s %-30s%n",
-                    city.city_name, city.country_name, city.district, city.population);
-
-        }
-    }
 
 
 }

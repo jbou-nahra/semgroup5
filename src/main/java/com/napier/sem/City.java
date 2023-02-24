@@ -1,5 +1,6 @@
 package com.napier.sem;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 /**
@@ -44,9 +45,10 @@ public class City {
 
     static public void printReport(ArrayList<City> cities, String reportDes)
     {
-        System.out.printf ( "%n%s%n%n", reportDes);
-        System.out.printf("%-30s %-30s %-30s %-30s%n", "City Name", "Country Name", " District", "Population");
-        System.out.printf("%-30s %-30s %-30s %-30s%n", "=========", "============", " ========", "==========");
+
+        System.out.printf ( "\u001B[32m %n%s%n%n", reportDes);
+        System.out.printf("\u001B[34m%-30s %-30s %-30s %-30s%n", "City Name", "Country Name", " District", "Population");
+        System.out.printf("\u001B[37m%-30s %-30s %-30s %-30s%n", "=========", "============", " ========", "==========");
 
         for (City city : cities)
         {
