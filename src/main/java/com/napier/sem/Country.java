@@ -1,7 +1,6 @@
 package com.napier.sem;
 
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  * Represents Countries in the world
@@ -84,6 +83,11 @@ public class Country {
      * */
     public int capital;
 
+    /**
+     * member to hold capital as string
+     * */
+    public String capitalstring;
+
 
 
     /**
@@ -92,5 +96,38 @@ public class Country {
     public String country_code2;
 
 
+    /**
+     Displays a report on All the cities in a district organized by largest population to smallest
+     @param countries A list of cities
+     @param reportDes A description of the report being printed e.g A list of cities in a country organized by population from largest to smallest
+     */
+
+    static public void printCountries(ArrayList<Country> countries, String reportDes)
+    {
+        System.out.printf ( "\u001B[32m %n%s%n%n", reportDes);
+        System.out.printf("\u001B[34m%-5s %-40s %-20s %-30s %-15s %-20s%n", "Code", "Country", "Continent", "Region", "Population", "Capital");
+        System.out.printf("\u001B[37m%-5s %-40s %-20s %-30s %-15s %-20s%n", "====", "=======", "=========", "======", "==========", "=======");
+
+
+        for (Country country : countries)
+        {
+            System.out.printf("%-5s %-40s %-20s %-30s %-15s %-20s%n",country.country_code, country.country_name, country.continent_name, country.region_name, country.population, country.capitalstring);
+
+        }
+    }
+
+    public void printCountries(ArrayList<Country> countries)
+    {
+
+        System.out.printf("%n%n%-5s %-40s %-20s %-30s %-15s %-20s%n", "Code", "Country", "Continent", "Region", "Population", "Capital");
+        System.out.printf("%n%-5s %-40s %-20s %-30s %-15s %-20s%n", "====", "=======", "=========", "======", "==========", "=======");
+
+
+        for (Country country : countries)
+        {
+            String.format("%-5s %-40s %-20s %-30s %-15s %-20s",country.country_code, country.country_name, country.continent_name, country.region_name, country.population, country.capitalstring);
+
+        }
+    }
 
 }

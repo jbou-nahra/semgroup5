@@ -8,7 +8,17 @@ public class App
     /**
      * Connection to MySQL database.
      */
-    private Connection con = null;
+    static private Connection con = null;
+
+    /**
+     * Method to get DB Connecton
+     * */
+
+     static public Connection getDBConnection()
+     {
+         return con;
+     }
+
 
     /**
      * Connect to the MySQL database.
@@ -41,7 +51,7 @@ public class App
             }
             catch (SQLException sqle)
             {
-                System.out.println("Failed to connect to database attempt " + Integer.toString(i));
+                System.out.println("Failed to connect to database attempt " + i);
                 System.out.println(sqle.getMessage());
             }
             catch (InterruptedException ie)
@@ -79,70 +89,27 @@ public class App
         a.connect();
 
         // Extract cities information
-        ArrayList<City> cities = a.getAllcities();
+        //    ArrayList<City> cities = a.getAllcities();
 
         //display  cities information
-        a.printCities(cities);
+        // a.printCities(cities);
+
+        Report10To13 report10to13 = new Report10To13();
+        report10to13.getReport10(); //produce a report on All the cities in a country organized by largest population to smallest
+        report10to13.getReport11(); // produce a report on All the cities in a district organized by largest population to smallest
+        report10to13.getReport12(); //produce a report on The Top N populated cities in the world where N is provided by the user
+        report10to13.getReport13(); //produce a report on The Top N populated cities in the continent where N is provided by the user
+
+        Report1To5 report1to5 = new Report1To5();
+        report1to5.getReport1();
+
+        Report6To9 report6To9 = new Report6To9();
+        report6To9.getAllcities();
+
 
         // Disconnect from database
         a.disconnect();
 
-
     }
-
-
-
-
-    public ArrayList<City> getAllcities()
-    {
-        try
-        {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
-            // Create string for SQL statement
-            String strSelect =
-                    "SELECT city.name, country.name, city.district, city.population  "
-                            + "FROM city, country "
-                            + "WHERE  city.countrycode = country.code   "
-                            + "ORDER BY population DESC ";
-            // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
-            // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
-            while (rset.next())
-            {
-                City city = new City();
-                city.city_name = rset.getString("city.name");
-                city.country_name = rset.getString("country.name");
-                city.district = rset.getString("city.district");
-                city.population = rset.getInt("city.population");
-                cities.add(city);
-            }
-            return cities ;
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get cities details");
-            return null;
-        }
-    }
-
-
-
-    public void printCities(ArrayList<City> cities)
-    {
-        // Print header
-        System.out.println(String.format("%-30s %-30s %-30s %-30s", "City name", "Country name", " district", "population"));
-
-        for (City city : cities)
-        {
-            String city_string =
-                    String.format("%-30s %-30s %-30s %-30s",
-                            city.city_name, city.country_name, city.district,city.population);
-            System.out.println(city_string);
-        }
-    }
-
 
 }
