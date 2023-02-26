@@ -89,15 +89,10 @@ public class App
         a.connect();
 
         // Extract cities information
-    //    ArrayList<City> cities = a.getAllcities();
-        // Extract Country information
-    //    ArrayList<Country> countries = a.getAllCountries();
+        //    ArrayList<City> cities = a.getAllcities();
 
         //display  cities information
-       // a.printCities(cities);
-
-        //display countries information
-      //  a.printCountries(countries);
+        // a.printCities(cities);
 
         Report10To13 report10to13 = new Report10To13();
         report10to13.getReport10(); //produce a report on All the cities in a country organized by largest population to smallest
@@ -105,113 +100,16 @@ public class App
         report10to13.getReport12(); //produce a report on The Top N populated cities in the world where N is provided by the user
         report10to13.getReport13(); //produce a report on The Top N populated cities in the continent where N is provided by the user
 
+        Report1To5 report1to5 = new Report1To5();
+        report1to5.getReport1();
+
+        Report6To9 report6To9 = new Report6To9();
+        report6To9.getAllcities();
+
 
         // Disconnect from database
         a.disconnect();
 
-
     }
-
-    public ArrayList<City> getAllcities()
-    {
-        try
-        {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
-            // Create string for SQL statement
-            String strSelect =
-                    "SELECT city.name, country.name, city.district, city.population  "
-                            + "FROM city, country "
-                            + "WHERE  city.CountryCode = country.code   "
-                            + "ORDER BY population DESC ";
-            // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
-            // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
-            while (rset.next())
-            {
-                City city = new City();
-                city.city_name = rset.getString("city.name");
-                city.country_name = rset.getString("country.name");
-                city.district = rset.getString("city.district");
-                city.population = rset.getInt("city.population");
-                cities.add(city);
-            }
-            return cities ;
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get cities details");
-            return null;
-        }
-    }
-
-    public ArrayList<Country> getAllCountries()
-    {
-        try
-        {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
-            // Create string for SQL statement
-            String strSelect =
-                    "SELECT country.Name, country.Population, country.Code, country.Continent, country.Region, city.Name "
-                            +"FROM country, city "
-                            +"WHERE country.Capital = city.ID "
-                            +"ORDER BY Population DESC";
-            // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
-            // Extract employee information
-            ArrayList<Country> countries = new ArrayList<>();
-            while (rset.next())
-            {
-                Country place = new Country();
-                place.country_name = rset.getString("country.Name");
-                place.population = rset.getInt("country.Population");
-                place.capitalstring = rset.getString("city.Name");
-                place.country_code = rset.getString("country.Code");
-                place.continent_name = rset.getString("country.Continent");
-                place.region_name = rset.getString("country.Region");
-                countries.add(place);
-            }
-            return countries;
-
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get country details");
-            return null;
-        }
-    }
-
-
-
-    public void printCities(ArrayList<City> cities)
-    {
-        // Print header
-        System.out.printf("%-30s %-30s %-30s %-30s%n", "City name", "Country name", " district", "population");
-
-        for (City city : cities)
-        {
-            String city_string =
-                    String.format("%-30s %-30s %-30s %-30s",
-                            city.city_name, city.country_name, city.district,city.population);
-            System.out.println(city_string);
-        }
-    }
-
-    public void printCountries(ArrayList<Country> countries)
-    {
-        System.out.printf("%-5s %-40s %-20s %-30s %-15s %-20s%n", "Code", "Country", "Continent", "Region", "Population", "Capital");
-
-        for (Country place : countries)
-        {
-            String place_string =
-                    String.format("%-5s %-40s %-20s %-30s %-15s %-20s",place.country_code, place.country_name, place.continent_name, place.region_name, place.population, place.capitalstring);
-            System.out.println(place_string);
-        }
-    }
-
 
 }
