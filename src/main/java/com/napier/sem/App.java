@@ -94,12 +94,11 @@ public class App
         //report10to13.getReport12(); //produce a report on The Top N populated cities in the world where N is provided by the user
         //report10to13.getReport13(); //produce a report on The Top N populated cities in the continent where N is provided by the user
 
-        Report1To5 report1to5 = new Report1To5();
-        report1to5.getReport1();
-        report1to5.getReport2();
-        report1to5.getReport3();
-        report1to5.getReport4();
-        report1to5.getReport5();
+        Report19To22 report19to22 = new Report19To22();
+        report19to22.getReport19();
+        report19to22.getReport20();
+        report19to22.getReport21();
+        report19to22.getReport22();
 
         //Report6To9 report6To9 = new Report6To9();
         //report6To9.getAllcities();
