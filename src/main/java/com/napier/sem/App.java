@@ -88,24 +88,24 @@ public class App
         // Connect to database
         a.connect();
 
-        //Report10To13.report10to13 = new Report10To13();
-        //report10to13.getReport10(); //produce a report on All the cities in a country organized by largest population to smallest
-        //report10to13.getReport11(); // produce a report on All the cities in a district organized by largest population to smallest
-        //report10to13.getReport12(); //produce a report on The Top N populated cities in the world where N is provided by the user
-        //report10to13.getReport13(); //produce a report on The Top N populated cities in the continent where N is provided by the user
+        Report10To13 report10to13 = new Report10To13();
+        report10to13.getReport10(); //produce a report on All the cities in a country organized by largest population to smallest
+        report10to13.getReport11(); // produce a report on All the cities in a district organized by largest population to smallest
+        report10to13.getReport12(); //produce a report on The Top N populated cities in the world where N is provided by the user
+        report10to13.getReport13(); //produce a report on The Top N populated cities in the continent where N is provided by the user
 
         Report1To5 report1to5 = new Report1To5();
-        //report1to5.getReport1();
-        //report1to5.getReport2();
-        //report1to5.getReport3();
-        //report1to5.getReport4();
+        report1to5.getReport1();
+        report1to5.getReport2();
+        report1to5.getReport3();
+        report1to5.getReport4();
         report1to5.getReport5();
 
         Report14To17 report14to17 = new Report14To17();
         report14to17.getReport14();
 
-        //Report6To9 report6To9 = new Report6To9();
-        //report6To9.getAllcities();
+        Report6To9 report6To9 = new Report6To9();
+        report6To9.getAllcities();
 
         // Disconnect from database
         a.disconnect();
