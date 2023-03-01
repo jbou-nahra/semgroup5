@@ -26,6 +26,7 @@ public class Report19To22 {
     {
         ResultSet rset = null;
         Statement stmt = null;
+        String region = "Western Europe";
 
         String reportDes = String.format("A report on All the Countries in the World organized by largest population to smallest");
         try
@@ -34,27 +35,24 @@ public class Report19To22 {
             stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT country.Name, country.Population, country.Code, country.Continent, country.Region, city.Name "
-                            +"FROM country, city "
-                            +"WHERE country.Capital = city.ID "
-                            +"ORDER BY Population DESC";
+                    "SELECT Name, Population FROM city WHERE ID IN ( SELECT Capital FROM country WHERE Region = '"+region+"' ) ORDER BY Population DESC";
             // Execute SQL statement
             rset = stmt.executeQuery(strSelect);
             // Extract employee information
-            ArrayList<Country> countries = new ArrayList<>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
-                Country place = new Country();
-                place.country_name = rset.getString("country.Name");
+                City place = new City();
+                place.city_name = rset.getString("city.Name");
                 place.population = rset.getInt("country.Population");
-                place.capitalstring = rset.getString("city.Name");
+           /*     place.capitalstring = rset.getString("city.Name");
                 place.country_code = rset.getString("country.Code");
                 place.continent_name = rset.getString("country.Continent");
-                place.region_name = rset.getString("country.Region");
-                countries.add(place);
+                place.region_name = rset.getString("country.Region");*/
+                cities.add(place);
             }
 
-            Country.printCountries(countries, reportDes);
+            City.printReport(cities, reportDes);
 
         }
         catch (Exception e)
@@ -86,27 +84,24 @@ public class Report19To22 {
             stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT country.Name, country.Population, country.Code, country.Continent, country.Region, city.Name "
-                            +"FROM country, city "
-                            +"WHERE country.Capital = city.ID AND country.continent ='" + continent + "' "
-                            +"ORDER BY Population DESC";
+                    "SELECT Name, Population FROM city WHERE ID IN ( SELECT Capital FROM country ) ORDER BY Population DESC LIMIT N;";
             // Execute SQL statement
             rset = stmt.executeQuery(strSelect);
             // Extract employee information
-            ArrayList<Country> countries = new ArrayList<>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
-                Country place = new Country();
-                place.country_name = rset.getString("country.Name");
+                City place = new City();
+                place.city_name = rset.getString("city.Name");
                 place.population = rset.getInt("country.Population");
-                place.capitalstring = rset.getString("city.Name");
+           /*     place.capitalstring = rset.getString("city.Name");
                 place.country_code = rset.getString("country.Code");
                 place.continent_name = rset.getString("country.Continent");
-                place.region_name = rset.getString("country.Region");
-                countries.add(place);
+                place.region_name = rset.getString("country.Region");*/
+                cities.add(place);
             }
 
-            Country.printCountries(countries, reportDes);
+            City.printReport(cities, reportDes);
 
         }
         catch (Exception e)
@@ -128,9 +123,9 @@ public class Report19To22 {
     {
         ResultSet rset = null;
         Statement stmt = null;
-        String region = "Western Europe";
+        String continent = "Western Europe";
 
-        String reportDes = String.format("A report on All the countries in a region (%s) organised by largest population to smallest.", region);
+        String reportDes = String.format("A report on All the countries in a region (%s) organised by largest population to smallest.", continent);
 
         try
         {
@@ -138,27 +133,25 @@ public class Report19To22 {
             stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT country.Name, country.Population, country.Code, country.Continent, country.Region, city.Name "
-                            +"FROM country, city "
-                            +"WHERE country.Capital = city.ID AND country.region ='" + region + "' "
-                            +"ORDER BY Population DESC";
+                    "SELECT Name, Population FROM city WHERE ID IN ( SELECT Capital FROM country WHERE Continent = '"+continent+"' ) ORDER BY Population DESC LIMIT 100;";
             // Execute SQL statement
             rset = stmt.executeQuery(strSelect);
             // Extract employee information
-            ArrayList<Country> countries = new ArrayList<>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
-                Country place = new Country();
-                place.country_name = rset.getString("country.Name");
+                City place = new City();
+                place.city_name = rset.getString("city.Name");
                 place.population = rset.getInt("country.Population");
-                place.capitalstring = rset.getString("city.Name");
+           /*     place.capitalstring = rset.getString("city.Name");
                 place.country_code = rset.getString("country.Code");
                 place.continent_name = rset.getString("country.Continent");
-                place.region_name = rset.getString("country.Region");
-                countries.add(place);
+                place.region_name = rset.getString("country.Region");*/
+                cities.add(place);
             }
 
-            Country.printCountries(countries, reportDes);
+            City.printReport(cities, reportDes);
+
 
         }
         catch (Exception e)
