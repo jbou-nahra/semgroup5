@@ -102,7 +102,10 @@ public class App
         report1to5.getReport5();
 
         Report14To17 report14to17 = new Report14To17();
-        report14to17.getReport14();
+        report14to17.getReport14(); //produced a report the top N populated cities in a region where N is provided by the user.
+        report14to17.getReport15();//produced a report on the top N populated cities in a country where N is provided by the user.
+        report14to17.getReport16();//produced a report on the top N populated cities in a district where N is provided by the user.
+       //report14to17.getReport17();//produced a report on all the capital cities in the world organised by largest population to smallest.
 
         Report6To9 report6To9 = new Report6To9();
         report6To9.getAllcities();
