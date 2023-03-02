@@ -119,8 +119,8 @@ public class App
         report14to17.getReport17();//produced a report on all the capital cities in the world organised by largest population to smallest.
         */
 
-        ReportLanguages reportLanguages = new ReportLanguages();
-        reportLanguages.getReportLanguages();
+        /*ReportLanguages reportLanguages = new ReportLanguages();
+        reportLanguages.getReportLanguages();*/
 
 
         // Disconnect from database
