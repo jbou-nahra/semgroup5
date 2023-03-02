@@ -183,4 +183,59 @@ public class Report14To17 {
         }
 
     }
+
+
+    public void getReport17() {
+        ResultSet rset = null;
+        Statement stmt = null;
+
+        String capital= " ";
+
+        String reportDes = String.format("A report on all the capital cities in the world organized by largest population to smallest.");
+        try {
+            // Create an SQL statement
+            stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT ID, city.Name, city.Population,CountryCode, country.Name, District"
+                            + " FROM country , city "
+                            + " WHERE country.Capital = city.ID"
+                            + " ORDER BY city.population DESC ";
+
+            // Execute SQL statement
+            rset = stmt.executeQuery(strSelect);
+            // Extract employee information
+            ArrayList<City> cities = new ArrayList<>();
+            while (rset.next()) {
+                City city = new City();
+                city.city_id = rset.getInt("ID");
+                city.city_name = rset.getString("Name");
+                city.country_code = rset.getString("CountryCode");
+                city.district = rset.getString("District");
+                city.population = rset.getInt("Population");
+                city.country_name = rset.getString("country.Name");
+                cities.add(city);
+            }
+
+            City.printReport(cities, reportDes);
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country details");
+        } finally {
+            try {
+                if (rset != null) rset.close();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+            try {
+                if (stmt != null) stmt.close();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+
+
+        }
+
+    }
 }
