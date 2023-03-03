@@ -1,8 +1,6 @@
 package com.napier.sem;
 
-
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  * number of languages  in the world
@@ -30,7 +28,22 @@ public class Countrylanguage {
     /**
      * percentage of person who speak they language
      * */
-    public String percentage;
+    public Integer percentage;
+
+    static public void printReport(ArrayList<Countrylanguage> countryLanguages, String reportDes)
+    {
+
+        System.out.printf ( "\u001B[32m %n%s%n%n", reportDes);
+        System.out.printf("\u001B[34m%-30s  %-30s%n ", "  Language", "World Percentage");
+        System.out.printf("\u001B[37m%-30s %-30s%n", "=========", "================");
+
+        for (Countrylanguage countryLang : countryLanguages)
+        {
+            System.out.printf("  %-30s     %-30s%n",
+                    countryLang.language, countryLang.percentage);
+
+        }
+    }
 
 
 
