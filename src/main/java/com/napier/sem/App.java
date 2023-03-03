@@ -88,7 +88,7 @@ public class App
         // Connect to database
         a.connect();
 
-       /* //Report 1 to 5 done by Jean Bou-Nahra
+        //Report 1 to 5 done by Jean Bou-Nahra
         Report1To5 report1to5 = new Report1To5();
         report1to5.getReport1();//All the countries in the world organised by largest population to smallest.
         report1to5.getReport2();//All the countries in a continent organised by largest population to smallest.
@@ -117,10 +117,10 @@ public class App
         report14to17.getReport15();//produced a report on the top N populated cities in a country where N is provided by the user.
         report14to17.getReport16();//produced a report on the top N populated cities in a district where N is provided by the user.
         report14to17.getReport17();//produced a report on all the capital cities in the world organised by largest population to smallest.
-        */
 
-        /*ReportLanguages reportLanguages = new ReportLanguages();
-        reportLanguages.getReportLanguages();*/
+
+        ReportLanguages reportLanguages = new ReportLanguages();
+        reportLanguages.getReportLanguages();
 
 
         // Disconnect from database
