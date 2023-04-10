@@ -20,7 +20,7 @@ public class Report1To5 {
 
     }
 
-    public void getReport1()
+    public Object getReport1()
     {
         ResultSet rset = null;
         Statement stmt = null;
@@ -64,10 +64,9 @@ public class Report1To5 {
         {
             try { if (rset != null) rset.close(); } catch (Exception e) {System.out.println(e.getMessage());}
             try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(e.getMessage());}
-
-
         }
 
+        return null;
     }
 
     public void getReport2()
