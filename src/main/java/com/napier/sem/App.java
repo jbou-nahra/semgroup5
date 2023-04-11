@@ -87,11 +87,12 @@ public class App
 
         // Connect to database
         a.connect();
+        String continent = "Europe";
 
        /* //Report 1 to 5 done by Jean Bou-nahra
         Report1To5 report1to5 = new Report1To5();
         report1to5.getReport1();
-        report1to5.getReport2();
+        report1to5.getReport2(continent);
         report1to5.getReport3();
         report1to5.getReport4();
         report1to5.getReport5();

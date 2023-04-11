@@ -20,7 +20,7 @@ public class Report1To5 {
 
     }
 
-    public Object getReport1()
+    public void getReport1()
     {
         ResultSet rset = null;
         Statement stmt = null;
@@ -66,14 +66,13 @@ public class Report1To5 {
             try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(e.getMessage());}
         }
 
-        return null;
+        //return null;
     }
 
-    public void getReport2()
+    public void getReport2(String continent)
     {
         ResultSet rset = null;
         Statement stmt = null;
-        String continent = "Europe";
 
         String reportDes = String.format("A report on All the countries in a continent (%s) organised by largest population to smallest.", continent);
 
