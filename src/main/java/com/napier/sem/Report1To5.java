@@ -20,10 +20,12 @@ public class Report1To5 {
 
     }
 
-    public void getReport1()
+    public int getReport1()
     {
+
         ResultSet rset = null;
         Statement stmt = null;
+        ArrayList<Country> countries = new ArrayList<>();
 
         String reportDes = String.format("A report on All the Countries in the World organized by largest population to smallest");
         try
@@ -39,7 +41,6 @@ public class Report1To5 {
             // Execute SQL statement
             rset = stmt.executeQuery(strSelect);
             // Extract employee information
-            ArrayList<Country> countries = new ArrayList<>();
             while (rset.next())
             {
                 Country place = new Country();
@@ -66,15 +67,21 @@ public class Report1To5 {
             try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(e.getMessage());}
         }
 
-        //return null;
+        return 0;
     }
 
-    public void getReport2(String continent)
+    public int getReport2(String continent)
     {
+        if(continent == null)
+        {
+            System.out.println("Input is NULL");
+            return 0;
+        }
         ResultSet rset = null;
         Statement stmt = null;
 
         String reportDes = String.format("A report on All the countries in a continent (%s) organised by largest population to smallest.", continent);
+        ArrayList<Country> countries = new ArrayList<>();
 
         try
         {
@@ -89,7 +96,12 @@ public class Report1To5 {
             // Execute SQL statement
             rset = stmt.executeQuery(strSelect);
             // Extract employee information
-            ArrayList<Country> countries = new ArrayList<>();
+            if(rset.next()==false)
+            {
+                System.out.println("No continent matches input.");
+                return 0;
+            }
+
             while (rset.next())
             {
                 Country place = new Country();
@@ -114,17 +126,19 @@ public class Report1To5 {
         {
             try { if (rset != null) rset.close(); } catch (Exception e) {System.out.println(e.getMessage());}
             try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(e.getMessage());}
-
-
         }
-
+        return 0;
     }
 
-    public void getReport3()
+    public int getReport3(String region)
     {
+        if(region == null)
+        {
+            System.out.println("Input is NULL");
+            return 0;
+        }
         ResultSet rset = null;
         Statement stmt = null;
-        String region = "Western Europe";
 
         String reportDes = String.format("A report on All the countries in a region (%s) organised by largest population to smallest.", region);
 
@@ -140,6 +154,12 @@ public class Report1To5 {
                             +"ORDER BY Population DESC";
             // Execute SQL statement
             rset = stmt.executeQuery(strSelect);
+
+            if(rset.next()==false)
+            {
+                System.out.println("No region matches input.");
+                return 0;
+            }
             // Extract employee information
             ArrayList<Country> countries = new ArrayList<>();
             while (rset.next())
@@ -166,10 +186,8 @@ public class Report1To5 {
         {
             try { if (rset != null) rset.close(); } catch (Exception e) {System.out.println(e.getMessage());}
             try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(e.getMessage());}
-
-
         }
-
+        return 0;
     }
 
     public void getReport4()

@@ -21,8 +21,40 @@ public class AppIntegrationTest
     }
 
     @Test
-    void unitTest2()
+    void getReport1function()
     {
-        assertEquals(5, 5);
+        Report1To5 report1to5 = new Report1To5();
+        report1to5.getReport1();
     }
+
+    @Test
+    void getReport2null()
+    {
+        Report1To5 report1to5 = new Report1To5();
+        report1to5.getReport2(null);
+    }
+    @Test
+    void getReport2gibberish()
+    {
+        String continent = "gibberish";
+        Report1To5 report1to5 = new Report1To5();
+        report1to5.getReport2(continent);
+    }
+
+    @Test
+    void getReport3null()
+    {
+        Report1To5 report1to5 = new Report1To5();
+        report1to5.getReport3(null);
+    }
+
+    @Test
+    void getReport3gibberish()
+    {
+        String region = "gibberish";
+        Report1To5 report1to5 = new Report1To5();
+        report1to5.getReport3(region);
+    }
+
+
 }

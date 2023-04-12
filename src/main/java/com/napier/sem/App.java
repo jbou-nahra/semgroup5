@@ -95,13 +95,14 @@ public class App
         }
 
         String continent = "Europe";
+        String region = "Western Europe";
 
 
         //Report 1 to 5 done by Jean Bou-Nahra
         Report1To5 report1to5 = new Report1To5();
         report1to5.getReport1();//All the countries in the world organised by largest population to smallest.
         report1to5.getReport2(continent);//All the countries in a continent organised by largest population to smallest.
-        report1to5.getReport3();//All the countries in a region organised by largest population to smallest.
+        report1to5.getReport3(region);//All the countries in a region organised by largest population to smallest.
         report1to5.getReport4();//The top N populated countries in the world where N is provided by the user.
         report1to5.getReport5();//The top N populated countries in a continent where N is provided by the user.
 
