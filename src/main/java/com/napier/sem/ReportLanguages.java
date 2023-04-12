@@ -42,7 +42,7 @@ public class ReportLanguages {
             String sqlBatchStr1 = "SET @world_Pop = (select sum(Population) from country);  ";
 
             String sqlBatchStr2 =
-                              " SELECT Language,  (sum(Population)/@world_Pop * 100) as Percentage"
+                    " SELECT Language,  (sum(Population)/@world_Pop * 100) as Percentage"
                             + " FROM country "
                             + " INNER JOIN countrylanguage "
                             + " ON CountryCode = Code"
@@ -52,7 +52,7 @@ public class ReportLanguages {
 
             stmt.addBatch( sqlBatchStr1);
             stmt.executeBatch();
-             rset = stmt.executeQuery(sqlBatchStr2);
+            rset = stmt.executeQuery(sqlBatchStr2);
 
 
             while (rset.next())
