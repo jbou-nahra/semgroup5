@@ -1,9 +1,6 @@
 name: SEM Group 5
-on:
-  push:
-    branches:
-      - master
-      - lab08
+on: push
+
 jobs:
   UnitTests:
     name: Unit Tests
