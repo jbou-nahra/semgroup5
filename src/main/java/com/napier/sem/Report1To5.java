@@ -70,21 +70,20 @@ public class Report1To5 {
         return 0;
     }
 
-    public int getReport2(String continent)
+    public void getReport2(String continent)
     {
-        if(continent == null)
-        {
-            System.out.println("Input is NULL");
-            return 0;
-        }
         ResultSet rset = null;
         Statement stmt = null;
 
         String reportDes = String.format("A report on All the countries in a continent (%s) organised by largest population to smallest.", continent);
-        ArrayList<Country> countries = new ArrayList<>();
+
 
         try
         {
+            if(continent == null)
+            {
+                throw new RuntimeException("Report 2 Exception - Continent Input is NULL");
+            }
             // Create an SQL statement
             stmt = con.createStatement();
             // Create string for SQL statement
@@ -95,13 +94,14 @@ public class Report1To5 {
                             +"ORDER BY Population DESC";
             // Execute SQL statement
             rset = stmt.executeQuery(strSelect);
+
             // Extract employee information
             if(rset.next()==false)
             {
-                System.out.println("No continent matches input.");
-                return 0;
+                throw new RuntimeException("Report 2 Exception - no continent matches input");
             }
 
+            ArrayList<Country> countries = new ArrayList<>();
             while (rset.next())
             {
                 Country place = new Country();
@@ -117,26 +117,23 @@ public class Report1To5 {
             Country.printCountries(countries, reportDes);
 
         }
+
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get country details");
         }
+
         finally
         {
             try { if (rset != null) rset.close(); } catch (Exception e) {System.out.println(e.getMessage());}
             try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(e.getMessage());}
         }
-        return 0;
+
     }
 
-    public int getReport3(String region)
+    public void getReport3(String region)
     {
-        if(region == null)
-        {
-            System.out.println("Input is NULL");
-            return 0;
-        }
+
         ResultSet rset = null;
         Statement stmt = null;
 
@@ -144,6 +141,10 @@ public class Report1To5 {
 
         try
         {
+            if(region == null)
+            {
+                throw new RuntimeException("Report 3 Exception - Region Input is NULL");
+            }
             // Create an SQL statement
             stmt = con.createStatement();
             // Create string for SQL statement
@@ -157,8 +158,7 @@ public class Report1To5 {
 
             if(rset.next()==false)
             {
-                System.out.println("No region matches input.");
-                return 0;
+                throw new RuntimeException("Report 3 Exception - no continent matches input");
             }
             // Extract employee information
             ArrayList<Country> countries = new ArrayList<>();
@@ -177,37 +177,34 @@ public class Report1To5 {
             Country.printCountries(countries, reportDes);
 
         }
+
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get country details");
         }
+
         finally
         {
             try { if (rset != null) rset.close(); } catch (Exception e) {System.out.println(e.getMessage());}
             try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(e.getMessage());}
         }
-        return 0;
+
     }
 
-    public int getReport4(int n)
+    public void getReport4(int n)
     {
-        if(n == 0)
-        {
-            System.out.println("Input cannot be 0");
-            return 0;
-        }
         ResultSet rset = null;
         Statement stmt = null;
 
-
-
         String reportDes =  String.format("A report on The Top N (%s) populated countries in the world where N is provided by the user",n);
-
-        ArrayList<City> cities = new ArrayList<>();
 
         try
         {
+            if(n == 0)
+            {
+                throw new RuntimeException("Report 4 Exception - Input cannot be 0");
+            }
+
             Connection con = App.getDBConnection();
             // Create an SQL statement
             stmt = con.createStatement();
@@ -239,50 +236,44 @@ public class Report1To5 {
             Country.printCountries(countries, reportDes);
 
         }
+
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get country details");
-
         }
+
         finally
         {
             try { if (rset != null) rset.close(); } catch (Exception e) {System.out.println(e.getMessage());}
             try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(e.getMessage());}
         }
-        return 0;
+
     }
 
-    public int getReport5(String continent, int n)
+    public void getReport5(String continent, int n)
     {
-        if(continent == null)
-        {
-            System.out.println("Input is NULL");
-            return 0;
-        }
-
-        if(n == 0)
-        {
-            System.out.println("Input cannot be 0");
-            return 0;
-        }
 
         ResultSet rset = null;
         Statement stmt = null;
 
-
-
         String reportDes =  String.format("A report on The Top N (%s) populated countries in a continent (%s) where N is provided by the user",n,continent);
-
-        ArrayList<City> cities = new ArrayList<>();
 
         try
         {
+            if(continent == null)
+            {
+                throw new RuntimeException("Report 5 Exception - Continent Input is NULL");
+            }
+
+            if(n == 0)
+            {
+                throw new RuntimeException("Report 5 Exception - Input cannot be 0");
+            }
+            n = n+1;
             Connection con = App.getDBConnection();
             // Create an SQL statement
             stmt = con.createStatement();
             // Create string for SQL statement
-
             String strSelect =
                     "SELECT country.Name, country.Population, country.Code, country.Continent, country.Region, city.Name "
                             +"FROM country, city "
@@ -292,6 +283,11 @@ public class Report1To5 {
 
             // Execute SQL statement
             rset = stmt.executeQuery(strSelect);
+
+            if(rset.next()==false)
+            {
+                throw new RuntimeException("Report 5 Exception - no continent matches input");
+            }
 
             ArrayList<Country> countries = new ArrayList<>();
             while (rset.next())
@@ -309,18 +305,18 @@ public class Report1To5 {
             Country.printCountries(countries, reportDes);
 
         }
+
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get country details");
-
         }
+
         finally
         {
             try { if (rset != null) rset.close(); } catch (Exception e) {System.out.println(e.getMessage());}
             try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(e.getMessage());}
         }
-        return 0;
+
     }
 
 

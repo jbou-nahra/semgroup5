@@ -22,6 +22,14 @@ public class AppIntegrationTest1to5
     }
 
     @Test
+    void getReport2function()
+    {
+        String continent = "Europe";
+        Report1To5 report1to5 = new Report1To5();
+        report1to5.getReport2(continent);
+    }
+
+    @Test
     void getReport2null()
     {
         Report1To5 report1to5 = new Report1To5();
@@ -34,6 +42,14 @@ public class AppIntegrationTest1to5
         String continent = "gibberish";
         Report1To5 report1to5 = new Report1To5();
         report1to5.getReport2(continent);
+    }
+
+    @Test
+    void getReport3function()
+    {
+        String region = "Western Europe";
+        Report1To5 report1to5 = new Report1To5();
+        report1to5.getReport3(region);
     }
 
     @Test
@@ -52,6 +68,13 @@ public class AppIntegrationTest1to5
     }
 
     @Test
+    void getReport4function()
+    {
+        Report1To5 report1to5 = new Report1To5();
+        report1to5.getReport4(1);
+    }
+
+    @Test
     void getReport4int0()
     {
         Report1To5 report1to5 = new Report1To5();
@@ -59,10 +82,25 @@ public class AppIntegrationTest1to5
     }
 
     @Test
+    void getReport5function()
+    {
+        String continent = "Europe";
+        Report1To5 report1to5 = new Report1To5();
+        report1to5.getReport5(continent,10);
+    }
+    @Test
     void getReport5null()
     {
         Report1To5 report1to5 = new Report1To5();
-        report1to5.getReport5(null,5);
+        report1to5.getReport5(null,1);
+    }
+
+    @Test
+    void getReport5gibberish()
+    {
+        String continent = "gibberish";
+        Report1To5 report1to5 = new Report1To5();
+        report1to5.getReport5(continent,1);
     }
 
     @Test
@@ -73,11 +111,4 @@ public class AppIntegrationTest1to5
         report1to5.getReport5(continent,0);
     }
 
-    @Test
-    void getReport5gibberish()
-    {
-        String continent = "gibberish";
-        Report1To5 report1to5 = new Report1To5();
-        report1to5.getReport5(continent,5);
-    }
 }
