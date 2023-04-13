@@ -190,12 +190,17 @@ public class Report1To5 {
         return 0;
     }
 
-    public void getReport4()
+    public int getReport4(int n)
     {
+        if(n == 0)
+        {
+            System.out.println("Input cannot be 0");
+            return 0;
+        }
         ResultSet rset = null;
         Statement stmt = null;
 
-        int n = 10;
+
 
         String reportDes =  String.format("A report on The Top N (%s) populated countries in the world where N is provided by the user",n);
 
@@ -244,18 +249,28 @@ public class Report1To5 {
         {
             try { if (rset != null) rset.close(); } catch (Exception e) {System.out.println(e.getMessage());}
             try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(e.getMessage());}
-
-
         }
+        return 0;
     }
 
-    public void getReport5()
+    public int getReport5(String continent, int n)
     {
+        if(continent == null)
+        {
+            System.out.println("Input is NULL");
+            return 0;
+        }
+
+        if(n == 0)
+        {
+            System.out.println("Input cannot be 0");
+            return 0;
+        }
+
         ResultSet rset = null;
         Statement stmt = null;
 
-        String continent = "Europe";
-        int n = 10;
+
 
         String reportDes =  String.format("A report on The Top N (%s) populated countries in a continent (%s) where N is provided by the user",n,continent);
 
@@ -304,9 +319,8 @@ public class Report1To5 {
         {
             try { if (rset != null) rset.close(); } catch (Exception e) {System.out.println(e.getMessage());}
             try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(e.getMessage());}
-
-
         }
+        return 0;
     }
 
 

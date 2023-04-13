@@ -2,13 +2,8 @@ package com.napier.sem;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
 
-import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-public class AppIntegrationTest
+public class AppIntegrationTest1to5
 {
     static App app;
 
@@ -55,6 +50,37 @@ public class AppIntegrationTest
         Report1To5 report1to5 = new Report1To5();
         report1to5.getReport3(region);
     }
+
+    @Test
+    void getReport4int0()
+    {
+        Report1To5 report1to5 = new Report1To5();
+        report1to5.getReport4(0);
+    }
+
+    @Test
+    void getReport5null()
+    {
+        Report1To5 report1to5 = new Report1To5();
+        report1to5.getReport5(null,5);
+    }
+
+    @Test
+    void getReport5int0()
+    {
+        String continent = "Europe";
+        Report1To5 report1to5 = new Report1To5();
+        report1to5.getReport5(continent,0);
+    }
+
+    @Test
+    void getReport5gibberish()
+    {
+        String continent = "gibberish";
+        Report1To5 report1to5 = new Report1To5();
+        report1to5.getReport5(continent,5);
+    }
+
 
 
 }
