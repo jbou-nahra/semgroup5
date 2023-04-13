@@ -20,7 +20,7 @@ public class Report1To5 {
 
     }
 
-    public int getReport1()
+    public void getReport1()
     {
 
         ResultSet rset = null;
@@ -67,7 +67,6 @@ public class Report1To5 {
             try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(e.getMessage());}
         }
 
-        return 0;
     }
 
     public void getReport2(String continent)
