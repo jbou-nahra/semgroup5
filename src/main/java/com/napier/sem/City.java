@@ -58,16 +58,23 @@ public class City {
         }
     }
 
-    public void printReport(ArrayList<City> cities)
+    static public void printReport(ArrayList<City> cities)
     {
 
         System.out.printf("%n%n%-30s %-30s %-30s %-30s", "City Name", "Country Name", " District", "Population");
         System.out.printf("%n%-30s %-30s %-30s %-30s%n", "=========", "============", " ========", "==========");
 
+
+        // If cities not null, then go ahead and print the information
+        if (cities != null )
         for (City city : cities)
         {
-            System.out.printf("%-30s %-30s %-30s %-30s%n",
-                    city.city_name, city.country_name, city.district, city.population);
+
+            if( city != null )
+            {
+                System.out.printf("%-30s %-30s %-30s %-30s%n",
+                        city.city_name, city.country_name, city.district, city.population);
+            }
 
         }
     }
