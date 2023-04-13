@@ -12,7 +12,6 @@ public class AppIntegrationTest1to5
     {
         app = new App();
         app.connect("localhost:33060", 30000);
-
     }
 
     @Test
@@ -28,6 +27,7 @@ public class AppIntegrationTest1to5
         Report1To5 report1to5 = new Report1To5();
         report1to5.getReport2(null);
     }
+
     @Test
     void getReport2gibberish()
     {
@@ -80,7 +80,4 @@ public class AppIntegrationTest1to5
         Report1To5 report1to5 = new Report1To5();
         report1to5.getReport5(continent,5);
     }
-
-
-
 }
