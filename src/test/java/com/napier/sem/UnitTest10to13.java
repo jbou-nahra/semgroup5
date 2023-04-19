@@ -4,9 +4,7 @@ import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-public class Test10to13
+public class UnitTest10to13
 {
     static App app;
     @BeforeAll
