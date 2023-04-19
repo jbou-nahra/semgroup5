@@ -25,13 +25,13 @@ public class Report10To13 {
     getReport10 gets a report on All the cities in a country organized by largest population to smallest.
      */
     //public ArrayList<City> getReport10()
-    public void getReport10()
+    public void getReport10(String countryName)
 
     {
         ResultSet rset = null;
         Statement stmt = null;
         // String countryCode ="";
-        String countryName = "United Kingdom";
+        //String countryName = "United Kingdom";
         ArrayList<City> cities = new ArrayList<>();
 
         String reportDes = String.format("A report on All the cities in a country (%s) organized by largest population to smallest",countryName );
@@ -89,11 +89,11 @@ public class Report10To13 {
     getReport11 gets a report on All the cities in a district organized by largest population to smallest.
      */
 //    public ArrayList<City> getReport11()
-    public void getReport11()
+    public void getReport11( String district)
     {
         ResultSet rset = null;
         Statement stmt = null;
-        String district = "England";
+        //String district = "England";
 
         ArrayList<City> cities = new ArrayList<>();
 
@@ -150,12 +150,12 @@ public class Report10To13 {
     /*
    getReport12  a report on The Top N populated cities in the world where N is provided by the user
     */
-    public void getReport12()//public ArrayList<City> getReport12(int n)
+    public void getReport12(int n)//public ArrayList<City> getReport12(int n)
     {
         ResultSet rset = null;
         Statement stmt = null;
 
-        int n = 10;
+        //int n = 10;
 
         // n = Integer.parseInt( System.console().readLine("Please Enter N: ") );
         //       System.out.printf("\nA report on The Top N (%s) populated cities in the world where N is provided by the user \n\n", n);
@@ -215,13 +215,13 @@ public class Report10To13 {
   get a report on The Top N populated cities in the continent where N is provided by the user
  */
 
-    public void getReport13()
+    public void getReport13(int n, String continent)
     {
         ResultSet rset = null;
         Statement stmt = null;
 
-        int n = 10;
-        String continent = "Africa";
+        // int n = 10;
+        // String continent = "Africa";
 
         String reportDes = String.format("A report on The Top N (%s) populated cities in the continent (%s) where N is provided by the user",n,continent);
 
