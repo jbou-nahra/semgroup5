@@ -111,7 +111,7 @@ public class Country {
 
         for (Country country : countries)
         {
-            System.out.printf("%-5s %-40s %-20s %-30s %-15s %-20s%n",country.country_code, country.country_name, country.continent_name, country.region_name, country.population, country.capital);
+            System.out.printf("%-5s %-40s %-20s %-30s %-15s %-20s%n",country.country_code, country.country_name, country.continent_name, country.region_name, country.population, country.capitalstring);
 
         }
     }
