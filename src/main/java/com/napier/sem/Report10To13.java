@@ -67,7 +67,7 @@ public class Report10To13 {
                 cities.add(city);
             }
 
-            City.printReport(cities, reportDes);
+            //City.printReport(cities, reportDes);
 
 
         }
@@ -82,9 +82,10 @@ public class Report10To13 {
             try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(e.getMessage());}
             //     try { if (con != null) con.close(); } catch (Exception e) {};
 
+            return cities;
         }
 
-        return cities;
+
 
     }
 
@@ -133,7 +134,7 @@ public class Report10To13 {
                 cities.add(city);
             }
 
-            City.printReport(cities, reportDes);
+            //City.printReport(cities, reportDes);
 
         }
         catch (Exception e)
@@ -197,7 +198,7 @@ public class Report10To13 {
                 cities.add(city);
             }
 
-            City.printReport(cities, reportDes);
+           // City.printReport(cities, reportDes);
 
         }
         catch (Exception e)
@@ -264,7 +265,7 @@ public class Report10To13 {
             }
 
 
-            City.printReport(cities, reportDes);
+           // City.printReport(cities, reportDes);
 
 
         }

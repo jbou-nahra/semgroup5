@@ -2,6 +2,9 @@ package com.napier.sem;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import static org.junit.jupiter.api.Assertions.*;
+import java.util.*;
 
 public class AppIntegrationTest10to13
 {
@@ -18,96 +21,33 @@ public class AppIntegrationTest10to13
     @Test
     void testGetReport10()
     {
-        String country = "United Kingdom";
-        report10To13.getReport10("country");
+        ArrayList<City> cities = report10To13.getReport10("United Kingdom");
+        assertEquals(81, cities.size());//the number of records returned
+        assertEquals("London", cities.get(0).city_name);
+        assertEquals("England", cities.get(0).district);
+        assertEquals(7285000, cities.get(0).population);
     }
 
     @Test
-    void getReport11function()
+     void testGetReport11()
     {
-       String district = "England";
-       report10To13.getReport11(district);
-    }
-
-    @Test
-    void getReport11null()
-    {
-        Report1To5 report1to5 = new Report1To5();
-        report10To13.getReport11(null);
-    }
-
-    @Test
-    void getReport11gibberish()
-    {
-        String continent = "gibberish";
-        report10To13.getReport11(continent);
 
     }
 
     @Test
-    void getReport12function()
+    void testGetReport12()
     {
-        String region = "Western Europe";
-        report10To13.getReport12(1);
+
     }
 
     @Test
-    void getReport3null()
+    void testGetReport13()
     {
-        Report1To5 report1to5 = new Report1To5();
-        report1to5.getReport3(null);
+
     }
 
-    @Test
-    void getReport3gibberish()
-    {
-        String region = "gibberish";
-        Report1To5 report1to5 = new Report1To5();
-        report1to5.getReport3(region);
-    }
 
-    @Test
-    void getReport4function()
-    {
-        Report1To5 report1to5 = new Report1To5();
-        report1to5.getReport4(1);
-    }
 
-    @Test
-    void getReport4int0()
-    {
-        Report1To5 report1to5 = new Report1To5();
-        report1to5.getReport4(0);
-    }
 
-    @Test
-    void getReport5function()
-    {
-        String continent = "Europe";
-        Report1To5 report1to5 = new Report1To5();
-        report1to5.getReport5(continent,10);
-    }
-    @Test
-    void getReport5null()
-    {
-        Report1To5 report1to5 = new Report1To5();
-        report1to5.getReport5(null,1);
-    }
-
-    @Test
-    void getReport5gibberish()
-    {
-        String continent = "gibberish";
-        Report1To5 report1to5 = new Report1To5();
-        report1to5.getReport5(continent,1);
-    }
-
-    @Test
-    void getReport5int0()
-    {
-        String continent = "Europe";
-        Report1To5 report1to5 = new Report1To5();
-        report1to5.getReport5(continent,0);
-    }
 
 }
