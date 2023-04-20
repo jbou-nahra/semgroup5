@@ -87,6 +87,12 @@ public class App
         // Create new Application
         App a = new App();
 
+        ArrayList<City> cities = new ArrayList<>();
+
+        String continent = "Europe";
+        String region = "Western Europe";
+        int n = 10;
+
         // Connect to database
         if(args.length < 1){
             a.connect("localhost:33060", 30000);
@@ -94,9 +100,7 @@ public class App
             a.connect(args[0], Integer.parseInt(args[1]));
         }
 
-        String continent = "Europe";
-        String region = "Western Europe";
-        int n = 10;
+
 
 
         //Report 1 to 5 done by Jean Bou-Nahra
@@ -117,7 +121,7 @@ public class App
 
         //Report 10 to 13 done by Damian Daley
         Report10To13 report10to13 = new Report10To13();
-        ArrayList<City> cities = report10to13.getReport10("United Kingdom"); //produce a report on All the cities in a country organized by largest population to smallest
+        cities = report10to13.getReport10("United Kingdom"); //produce a report on All the cities in a country organized by largest population to smallest
         City.printReport(cities);
 
         cities = report10to13.getReport11("England"); // produce a report on All the cities in a district organized by largest population to smallest
