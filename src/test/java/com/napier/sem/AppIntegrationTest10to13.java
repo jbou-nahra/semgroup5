@@ -16,7 +16,7 @@ public class AppIntegrationTest10to13
     }
 
     @Test
-    void getReport10function()
+    void testGetReport10()
     {
         String country = "United Kingdom";
         report10To13.getReport10("country");

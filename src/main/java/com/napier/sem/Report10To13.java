@@ -25,7 +25,7 @@ public class Report10To13 {
     getReport10 gets a report on All the cities in a country organized by largest population to smallest.
      */
     //public ArrayList<City> getReport10()
-    public void getReport10(String countryName)
+    public ArrayList<City> getReport10(String countryName)
 
     {
         ResultSet rset = null;
@@ -69,6 +69,7 @@ public class Report10To13 {
 
             City.printReport(cities, reportDes);
 
+
         }
         catch (Exception e)
         {
@@ -83,13 +84,15 @@ public class Report10To13 {
 
         }
 
+        return cities;
+
     }
 
     /*
     getReport11 gets a report on All the cities in a district organized by largest population to smallest.
      */
 //    public ArrayList<City> getReport11()
-    public void getReport11( String district)
+    public ArrayList<City> getReport11( String district)
     {
         ResultSet rset = null;
         Statement stmt = null;
@@ -145,12 +148,13 @@ public class Report10To13 {
             //     try { if (con != null) con.close(); } catch (Exception e) {};
 
         }
+        return cities;
     }
 
     /*
    getReport12  a report on The Top N populated cities in the world where N is provided by the user
     */
-    public void getReport12(int n)//public ArrayList<City> getReport12(int n)
+    public ArrayList<City> getReport12(int n)//public ArrayList<City> getReport12(int n)
     {
         ResultSet rset = null;
         Statement stmt = null;
@@ -209,13 +213,15 @@ public class Report10To13 {
             //     try { if (con != null) con.close(); } catch (Exception e) {};
 
         }
+
+        return cities;
     }
 
     /*
   get a report on The Top N populated cities in the continent where N is provided by the user
  */
 
-    public void getReport13(int n, String continent)
+    public ArrayList<City> getReport13(int n, String continent)
     {
         ResultSet rset = null;
         Statement stmt = null;
@@ -274,6 +280,8 @@ public class Report10To13 {
             //     try { if (con != null) con.close(); } catch (Exception e) {};
 
         }
+
+        return cities;
     }
 
 
