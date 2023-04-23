@@ -19,26 +19,53 @@ public class Report6To9 {
         }
 
     }
-    public void getReport6()
+    public void getReport6(int limit , String region)
     {
 
         ResultSet rset = null;
         Statement stmt = null;
-        int limit =3;
+        //int limit =3;
+
         String reportDes = String.format("report on the top (%o) populated countries in a region in the world ",limit);
         try
         {
+
+
+            if ((region == null)&&( limit== 0))
+            {
+                throw new RuntimeException("Report 6 Exception - Region Input cannot be  NULL and   Limit Input cannot be 0");
+            }
+
+            if(region == null)
+            {
+                throw new RuntimeException("Report 6 Exception - Region Input cannot be  NULL");
+            }
+
+            if( limit== 0)
+            {
+                throw new RuntimeException("Report 6 Exception -  Limit Input cannot be 0");
+            }
+
+
+            int limit2 = limit;
             // Create an SQL statement
             stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
                     "SELECT code, name, continent, region, population, capital "
                             + "FROM  country "
-                            + "WHERE  region = 'caribbean'   "
+                            + "WHERE  region = '" + region +"'  "
                             + "ORDER BY population DESC "
-                            + "limit 3 ";
+                            + "limit " + limit ;
             // Execute SQL statement
             rset = stmt.executeQuery(strSelect);
+
+
+            if(rset.next()==false)
+            {
+                throw new RuntimeException("Report 6 Exception - no Region matches input");
+            }
+
             // Extract city information
             ArrayList<Country>  countries = new ArrayList<Country>();
             while (rset.next())
@@ -56,8 +83,8 @@ public class Report6To9 {
         }
         catch (Exception e)
         {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get cities details");
+           System.out.println(e.getMessage());
+            //System.out.println("Failed to get cities details");
 
         }
     }
@@ -70,6 +97,8 @@ public class Report6To9 {
         String reportDes = String.format("report on All the cities in the world organised by population from the largest to the smallest ");
         try
         {
+
+
             // Create an SQL statement
              stmt = con.createStatement();
             // Create string for SQL statement
@@ -96,22 +125,28 @@ public class Report6To9 {
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get cities details");
+
 
         }
     }
 
 
 
-    public void getReport8()
+    public void getReport8(String continent)
     {
 
         ResultSet rset = null;
         Statement stmt = null;
-        String continent = "asia";
+        //String continent = "asia";
         String reportDes = String.format("report on All the cities in a continent (%s) in the world by population from largest to smallest ",continent);
         try
         {
+
+            if(continent == null)
+            {
+                throw new RuntimeException("Report 8 Exception - Continent Input cannot be  NULL");
+            }
+
             // Create an SQL statement
             stmt = con.createStatement();
             // Create string for SQL statement
@@ -119,10 +154,15 @@ public class Report6To9 {
                     "SELECT city.name, country.name, city.district, city.population  "
                             + "FROM city "
                             + "JOIN country on city.countrycode = country.code  "
-                            + "WHERE  country.continent='asia'"
+                            + "WHERE  country.continent='"+continent+"'"
                             + "ORDER BY population DESC";
             // Execute SQL statement
             rset = stmt.executeQuery(strSelect);
+
+            if(rset.next()==false)
+            {
+                throw new RuntimeException("Report 8 Exception - no Continent matches input");
+            }
             // Extract city information
             ArrayList<City> cities = new ArrayList<City>();
             while (rset.next())
@@ -139,21 +179,27 @@ public class Report6To9 {
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get cities details");
+
 
         }
     }
 
 
-    public void getReport9()
+    public void getReport9(String region)
     {
 
         ResultSet rset = null;
         Statement stmt = null;
-        String region = "Southern Europe";
+        //String region = "Southern Europe";
         String reportDes = String.format("report on All the cities in a region (%s) in the world organised by population from the largest to the smallest",region);
         try
         {
+
+            if(region == null)
+            {
+                throw new RuntimeException("Report 9 Exception -  Region  input  cannot be null");
+            }
+
             // Create an SQL statement
             stmt = con.createStatement();
             // Create string for SQL statement
@@ -161,10 +207,17 @@ public class Report6To9 {
                     "SELECT city.name, country.name, city.district, city.population  "
                             + "FROM city "
                             + "JOIN country on city.countrycode = country.code  "
-                            + "WHERE  country.region='Southern Europe'"
+                            + "WHERE  country.region='"+region+"'"
                             + "ORDER BY population DESC";
             // Execute SQL statement
             rset = stmt.executeQuery(strSelect);
+
+
+            if(rset.next()==false)
+            {
+                throw new RuntimeException("Report 9 Exception - no Region matches input");
+            }
+
             // Extract city information
             ArrayList<City> cities = new ArrayList<City>();
             while (rset.next())
@@ -181,7 +234,7 @@ public class Report6To9 {
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get cities details");
+
 
         }
     }

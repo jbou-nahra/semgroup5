@@ -36,7 +36,7 @@ public class App
             System.exit(-1);
         }
 
-        int retries = 10;
+        int retries = 3;
         for (int i = 0; i < retries; ++i)
         {
             System.out.println("Connecting to database...");
@@ -97,8 +97,9 @@ public class App
         String continent = "Europe";
         String region = "Western Europe";
         int n = 10;
-
-
+        int limit = 3;
+        String region2 ="caribbean";
+        String continent2= "asia";
         //Report 1 to 5 done by Jean Bou-Nahra
         Report1To5 report1to5 = new Report1To5();
         report1to5.getReport1();//All the countries in the world organised by largest population to smallest.
@@ -109,10 +110,10 @@ public class App
 
         //Report 6 to 9 done by Jerome Burke III
         Report6To9 report6To9 = new Report6To9();
-        report6To9.getReport6();//report on the top N populated countries in a region in the world
+        report6To9.getReport6(limit,region2);//report on the top N populated countries in a region in the world
         report6To9.getReport7();// report on All the cities in the world organised by population from the largest to the smallest
-        report6To9.getReport8();// report on All the cities in a continent  in the world by population from largest to smallest
-        report6To9.getReport9();//report on All the cities in a region  in the world organised by population from the largest to the smallest
+        report6To9.getReport8(continent2);// report on All the cities in a continent  in the world by population from largest to smallest
+        report6To9.getReport9(region);//report on All the cities in a region  in the world organised by population from the largest to the smallest
 
 
         //Report 10 to 13 done by Damian Daley
