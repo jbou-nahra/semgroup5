@@ -22,50 +22,58 @@ public class Report19To22 {
 
     }
 
-    public void getReport19()
+    public void getReport19(int n)
     {
         ResultSet rset = null;
         Statement stmt = null;
-        String region = "Western Europe";
 
-        String reportDes = String.format("A report on All the Countries in the World organized by largest population to smallest");
+        String reportDes =  String.format("A report on The Top N (%s) populated capital cities in the world where N is provided by the user",n);
+
         try
         {
+            if(n == 0)
+            {
+                throw new RuntimeException("Report 19 Exception - Input cannot be 0");
+            }
+
+            Connection con = App.getDBConnection();
             // Create an SQL statement
             stmt = con.createStatement();
             // Create string for SQL statement
+
             String strSelect =
-                    "SELECT Name, Population FROM city WHERE ID IN ( SELECT Capital FROM country WHERE Region = '"+region+"' ) ORDER BY Population DESC";
+                    "SELECT ID, city.Name, country.Name, CountryCode, District, city.Population"
+                            + " FROM city "
+                            + " INNER JOIN country on city.id = country.capital"
+                            + " ORDER BY city.population DESC "
+                            + " Limit " + n;
+
             // Execute SQL statement
             rset = stmt.executeQuery(strSelect);
-            // Extract employee information
-            ArrayList<City> cities = new ArrayList<>();
+
+            ArrayList<City> cities = new ArrayList<City>();
             while (rset.next())
             {
-                City place = new City();
-                place.city_name = rset.getString("city.Name");
-                place.population = rset.getInt("country.Population");
-           /*     place.capitalstring = rset.getString("city.Name");
-                place.country_code = rset.getString("country.Code");
-                place.continent_name = rset.getString("country.Continent");
-                place.region_name = rset.getString("country.Region");*/
-                cities.add(place);
+                City city = new City();
+                city.city_name = rset.getString("city.name");
+                city.country_name = rset.getString("country.name");
+                city.district = rset.getString("city.district");
+                city.population = rset.getInt("city.population");
+                cities.add(city);
             }
-
             City.printReport(cities, reportDes);
 
         }
+
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get country details");
         }
+
         finally
         {
             try { if (rset != null) rset.close(); } catch (Exception e) {System.out.println(e.getMessage());}
             try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(e.getMessage());}
-
-
         }
 
     }

@@ -99,7 +99,7 @@ public class App
         int n = 10;
 
 
-        //Report 1 to 5 done by Jean Bou-Nahra
+        /*//Report 1 to 5 done by Jean Bou-Nahra
         Report1To5 report1to5 = new Report1To5();
         report1to5.getReport1();//All the countries in the world organised by largest population to smallest.
         report1to5.getReport2(continent);//All the countries in a continent organised by largest population to smallest.
@@ -131,14 +131,14 @@ public class App
 
 
         ReportLanguages reportLanguages = new ReportLanguages();
-        reportLanguages.getReportLanguages();
-
+        reportLanguages.getReportLanguages();*/
+        Report22To25 report22To25 = new Report22To25();
+        report22To25.getReport23();
+        report22To25.getReport24();
+        report22To25.getReport25();
 
         // Disconnect from database
         a.disconnect();
-
-
-
     }
 
 }

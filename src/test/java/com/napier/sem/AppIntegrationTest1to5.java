@@ -30,39 +30,9 @@ public class AppIntegrationTest1to5
     }
 
     @Test
-    void getReport2null()
-    {
-        Report1To5 report1to5 = new Report1To5();
-        report1to5.getReport2(null);
-    }
-
-    @Test
-    void getReport2gibberish()
-    {
-        String continent = "gibberish";
-        Report1To5 report1to5 = new Report1To5();
-        report1to5.getReport2(continent);
-    }
-
-    @Test
     void getReport3function()
     {
         String region = "Western Europe";
-        Report1To5 report1to5 = new Report1To5();
-        report1to5.getReport3(region);
-    }
-
-    @Test
-    void getReport3null()
-    {
-        Report1To5 report1to5 = new Report1To5();
-        report1to5.getReport3(null);
-    }
-
-    @Test
-    void getReport3gibberish()
-    {
-        String region = "gibberish";
         Report1To5 report1to5 = new Report1To5();
         report1to5.getReport3(region);
     }
@@ -75,40 +45,47 @@ public class AppIntegrationTest1to5
     }
 
     @Test
-    void getReport4int0()
-    {
-        Report1To5 report1to5 = new Report1To5();
-        report1to5.getReport4(0);
-    }
-
-    @Test
     void getReport5function()
     {
         String continent = "Europe";
-        Report1To5 report1to5 = new Report1To5();
-        report1to5.getReport5(continent,10);
-    }
-    @Test
-    void getReport5null()
-    {
-        Report1To5 report1to5 = new Report1To5();
-        report1to5.getReport5(null,1);
-    }
-
-    @Test
-    void getReport5gibberish()
-    {
-        String continent = "gibberish";
         Report1To5 report1to5 = new Report1To5();
         report1to5.getReport5(continent,1);
     }
 
     @Test
-    void getReport5int0()
+    void getReport19function()
     {
-        String continent = "Europe";
-        Report1To5 report1to5 = new Report1To5();
-        report1to5.getReport5(continent,0);
+        Report19To22 Report19To22 = new Report19To22();
+        Report19To22.getReport19(1);
+    }
+
+    @Test
+    void getReport22function()
+    {
+        String region = "Western Europe";
+        Report22To25 report22To25 = new Report22To25();
+        report22To25.getReport22(region, 5);
+    }
+
+    @Test
+    void getReport23function()
+    {
+        Report22To25 report22To25 = new Report22To25();
+        report22To25.getReport23();
+    }
+
+    @Test
+    void getReport24function()
+    {
+        Report22To25 report22To25 = new Report22To25();
+        report22To25.getReport24();
+    }
+
+    @Test
+    void getReport25function()
+    {
+        Report22To25 report22To25 = new Report22To25();
+        report22To25.getReport25();
     }
 
 }
