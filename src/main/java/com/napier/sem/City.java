@@ -50,14 +50,18 @@ public class City {
         System.out.printf("\u001B[34m%-30s %-30s %-30s %-30s%n", "City Name", "Country Name", " District", "Population");
         System.out.printf("\u001B[37m%-30s %-30s %-30s %-30s%n", "=========", "============", " ========", "==========");
 
+        if (cities != null )
         for (City city : cities)
         {
-            System.out.printf("%-30s %-30s %-30s %-30s%n",
-                    city.city_name, city.country_name, city.district, city.population);
+            if( city != null )
+            {
+                System.out.printf("%-30s %-30s %-30s %-30s%n",
+                        city.city_name, city.country_name, city.district, city.population);
+            }
 
         }
     }
-
+/*
     static public void printReport(ArrayList<City> cities)
     {
 
@@ -78,6 +82,6 @@ public class City {
 
         }
     }
-
+*/
 
 }
