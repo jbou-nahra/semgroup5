@@ -96,6 +96,7 @@ public class App
 
         String continent = "Europe";
         String region = "Western Europe";
+        String country = "China";
         int n = 10;
 
 
@@ -136,6 +137,12 @@ public class App
         report22To25.getReport23();
         report22To25.getReport24();
         report22To25.getReport25();
+
+        Report26To31 report26To31 = new Report26To31();
+        report26To31.getReport26();
+        report26To31.getReport27(continent);
+        report26To31.getReport28(region);
+        report26To31.getReport29(country);
 
         // Disconnect from database
         a.disconnect();

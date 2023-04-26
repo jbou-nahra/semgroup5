@@ -170,12 +170,23 @@ public class Report22To25 {
                 ruralpop.add(temp);
             }
             System.out.printf("\u001B[32m %n%s%n%n","A Report on the population of people, people living in cities, and people not living in cities in each continent.");
-            System.out.printf("\u001B[34m%-20s %-20s %-20s %-20s%n", "Continent", "Total Population", "Rural Population", "City Population");
-            System.out.printf("\u001B[37m%-20s %-20s %-20s %-20s%n", "==============", "================", "================", "===============");
+            System.out.printf("\u001B[34m%-20s %-20s %-20s %-20s %-20s %-20s%n", "Continent", "Total Population", "Rural Population", "Rural Percentage", "City Percentage", "City Population");
+            System.out.printf("\u001B[37m%-20s %-20s %-20s %-20s %-20s %-20s%n", "==============","==============", "================", "================", "===============", "===============");
 
             for(int z = 0; z < continent.size() ; z++)
             {
-                System.out.printf("%-20s %-20s %-20s %-20s%n", continent.get(z), countrypop.get(z), ruralpop.get(z), citypop.get(z));
+                Long ruralpercent=null;
+                Long citypercent=null;
+                if(ruralpop.get(z) != 0 && citypop.get(z) != 0)
+                {
+                    ruralpercent = ruralpop.get(z) * 100;
+                    ruralpercent = ruralpercent / countrypop.get(z);
+
+                    citypercent = citypop.get(z) * 100;
+                    citypercent = citypercent / countrypop.get(z);
+                }
+
+                System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s%n", continent.get(z), countrypop.get(z), ruralpop.get(z), ruralpercent, citypercent, citypop.get(z));
             }
         }
         catch (Exception e)
@@ -275,12 +286,22 @@ public class Report22To25 {
                 ruralpop.add(temp);
             }
             System.out.printf("\u001B[32m %n%s%n%n","A Report on the population of people, people living in cities, and people not living in cities in each region.");
-            System.out.printf("\u001B[34m%-30s %-20s %-20s %-20s%n", "Region", "Total Population", "Rural Population", "City Population");
-            System.out.printf("\u001B[37m%-30s %-20s %-20s %-20s%n", "==============", "================", "================", "===============");
+            System.out.printf("\u001B[34m%-30s %-20s %-20s %-20s %-20s %-20s%n", "Region", "Total Population", "Rural Population", "Rural Percentage", "City Percentage", "City Population");
+            System.out.printf("\u001B[37m%-30s %-20s %-20s %-20s %-20s %-20s%n", "==============", "================", "================", "===============", "===============", "===============");
 
             for(int z = 0; z < region.size() ; z++)
             {
-                System.out.printf("%-30s %-20s %-20s %-20s%n", region.get(z), countrypop.get(z), ruralpop.get(z), citypop.get(z));
+                Long ruralpercent=null;
+                Long citypercent=null;
+                if(ruralpop.get(z) != 0 && citypop.get(z) != 0)
+                {
+                    ruralpercent = ruralpop.get(z) * 100;
+                    ruralpercent = ruralpercent / countrypop.get(z);
+
+                    citypercent = citypop.get(z) * 100;
+                    citypercent = citypercent / countrypop.get(z);
+                }
+                System.out.printf("%-30s %-20s %-20s %-20s %-20s %-20s%n", region.get(z), countrypop.get(z), ruralpop.get(z), ruralpercent, citypercent, citypop.get(z));
             }
         }
         catch (Exception e)
@@ -381,12 +402,22 @@ public class Report22To25 {
                 ruralpop.add(temp);
             }
             System.out.printf("\u001B[32m %n%s%n%n","A Report on the population of people, people living in cities, and people not living in cities in each country.");
-            System.out.printf("\u001B[34m%-30s %-20s %-20s %-20s%n", "Country", "Total Population", "Rural Population", "City Population");
-            System.out.printf("\u001B[37m%-30s %-20s %-20s %-20s%n", "==============", "================", "================", "===============");
+            System.out.printf("\u001B[34m%-30s %-20s %-20s %-20s %-20s %-20s%n", "Country", "Total Population", "Rural Population", "Rural Percentage", "City Percentage", "City Population");
+            System.out.printf("\u001B[37m%-30s %-20s %-20s %-20s %-20s %-20s%n", "==============", "================", "================", "===============", "===============", "===============");
 
             for(int z = 0; z < country.size() ; z++)
             {
-                System.out.printf("%-30s %-20s %-20s %-20s%n", country.get(z), countrypop.get(z), ruralpop.get(z), citypop.get(z));
+                Long ruralpercent=null;
+                Long citypercent=null;
+                if(ruralpop.get(z) != 0 && citypop.get(z) != 0)
+                {
+                    ruralpercent = ruralpop.get(z) * 100;
+                    ruralpercent = ruralpercent / countrypop.get(z);
+
+                    citypercent = citypop.get(z) * 100;
+                    citypercent = citypercent / countrypop.get(z);
+                }
+                System.out.printf("%-30s %-20s %-20s %-20s %-20s %-20s%n", country.get(z), countrypop.get(z), ruralpop.get(z), ruralpercent, citypercent, citypop.get(z));
             }
         }
         catch (Exception e)

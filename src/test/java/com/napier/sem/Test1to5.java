@@ -100,4 +100,26 @@ public class Test1to5
         Report22To25 report22To25 = new Report22To25();
         report22To25.getReport22(null, 1);
     }
+
+    @Test
+    void getReport27null()
+    {
+        Report26To31 report26To31 = new Report26To31();
+        report26To31.getReport27(null);
+    }
+
+    @Test
+    void getReport28null()
+    {
+        Report26To31 report26To31 = new Report26To31();
+        report26To31.getReport28(null);
+    }
+
+    @Test
+    void getReport29null()
+    {
+        Report26To31 report26To31 = new Report26To31();
+        report26To31.getReport29(null);
+    }
+
 }

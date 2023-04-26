@@ -88,4 +88,35 @@ public class AppIntegrationTest1to5
         report22To25.getReport25();
     }
 
+    @Test
+    void getReport26function()
+    {
+        Report26To31 report26To31 = new Report26To31();
+        report26To31.getReport26();
+    }
+
+    @Test
+    void getReport27function()
+    {
+        String continent = "Europe";
+        Report26To31 report26To31 = new Report26To31();
+        report26To31.getReport27(continent);
+    }
+
+    @Test
+    void getReport28function()
+    {
+        String region = " Western Europe";
+        Report26To31 report26To31 = new Report26To31();
+        report26To31.getReport27(region);
+    }
+
+    @Test
+    void getReport29function()
+    {
+        String country = "China";
+        Report26To31 report26To31 = new Report26To31();
+        report26To31.getReport29(country);
+    }
+
 }
