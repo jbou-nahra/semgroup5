@@ -1,6 +1,6 @@
 Group 5 course work project.
 
-Testing github actions.
+Testing Github actions.
 
 Master Build Status: ![workflow](https://github.com/jbou-nahra/semgroup5/actions/workflows/main.yml/badge.svg)
 
