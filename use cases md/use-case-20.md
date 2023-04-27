@@ -1,4 +1,4 @@
-# USE CASE: 20 The top N populated capital cities in the world where N is provided by the user.
+# USE CASE: 20 The top N populated capital cities in the world 
 
 ## CHARACTERISTIC INFORMATION
 
