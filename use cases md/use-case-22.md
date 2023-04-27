@@ -43,7 +43,7 @@ A request for population information is sent from survey and census to the Data 
 
 ## EXTENSIONS
 2. ** region does not  exist.**
-   i. Data Analyst informs survey and census that this continent does  not exist or is not available.
+   i. Data Analyst informs survey and census that this region does  not exist or is not available.
 
 3. ** Data does not exist for all countries  **
    i. Data analyst makes a report on all countries that are available, and advises that data is not available for all countries.
