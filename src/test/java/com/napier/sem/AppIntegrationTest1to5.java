@@ -53,10 +53,10 @@ public class AppIntegrationTest1to5
     }
 
     @Test
-    void getReport19function()
+    void getReport20function()
     {
-        Report19To22 Report19To22 = new Report19To22();
-        Report19To22.getReport19(1);
+        Report18To21 Report18To21 = new Report18To21();
+        Report18To21.getReport20(1);
     }
 
     @Test
@@ -117,6 +117,30 @@ public class AppIntegrationTest1to5
         String country = "China";
         Report26To31 report26To31 = new Report26To31();
         report26To31.getReport29(country);
+    }
+
+    @Test
+    void getReport30function()
+    {
+        String district = "Casablanca";
+        Report26To31 report26To31 = new Report26To31();
+        report26To31.getReport30(district);
+    }
+
+    @Test
+    void getReport31function()
+    {
+        String city = "New York";
+        Report26To31 report26To31 = new Report26To31();
+        report26To31.getReport31(city);
+    }
+
+    @Test
+    void getReport18function()
+    {
+        String continent = "Europe";
+        Report18To21 Report18To21 = new Report18To21();
+        Report18To21.getReport18(continent);
     }
 
 }

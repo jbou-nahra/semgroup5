@@ -1,7 +1,6 @@
 package com.napier.sem;
 
 import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 public class Test1to5
 {
@@ -72,10 +71,10 @@ public class Test1to5
     }
 
     @Test
-    void getReport19int0()
+    void getReport20int0()
     {
-        Report19To22 Report19To22 = new Report19To22();
-        Report19To22.getReport19(0);
+        Report18To21 Report18To21 = new Report18To21();
+        Report18To21.getReport20(0);
     }
 
     @Test
@@ -120,6 +119,13 @@ public class Test1to5
     {
         Report26To31 report26To31 = new Report26To31();
         report26To31.getReport29(null);
+    }
+
+    @Test
+    void getReport30null()
+    {
+        Report26To31 report26To31 = new Report26To31();
+        report26To31.getReport30(null);
     }
 
 }

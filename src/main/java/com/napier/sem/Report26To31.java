@@ -172,7 +172,7 @@ public class Report26To31 {
         {
             if(country == null)
             {
-                throw new RuntimeException("Report 28 Exception - Continent Input is NULL");
+                throw new RuntimeException("Report 29 Exception - Continent Input is NULL");
             }
             // Create an SQL statement
             stmt = con.createStatement();
@@ -206,10 +206,102 @@ public class Report26To31 {
             try { if (rset != null) rset.close(); } catch (Exception e) {System.out.println(e.getMessage());}
             try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(e.getMessage());}
         }
-
-
     }
 
+    public void getReport30(String district)
+    {
+
+        ResultSet rset = null;
+        Statement stmt = null;
+        Long districtpop = null;
 
 
+        try
+        {
+            if(district == null)
+            {
+                throw new RuntimeException("Report 30 Exception - Continent Input is NULL");
+            }
+            // Create an SQL statement
+            stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT sum(city.population) "
+                            + "FROM city "
+                            + "WHERE city.district ='" + district + "' ";
+
+            // Execute SQL statement
+            rset = stmt.executeQuery(strSelect);
+            // Extract employee information
+            while (rset.next())
+            {
+                districtpop = rset.getLong("sum(city.population)");
+            }
+
+            System.out.printf("\u001B[32m %n%s%n%n","A Report on the population of the world.");
+            System.out.printf("\u001B[34m%-20s %-20s%n", "District", "Total Population");
+            System.out.printf("\u001B[37m%-20s %-20s%n", "==============", "================");
+            System.out.printf("%-20s %-20s%n", district, districtpop);
+
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country details");
+        }
+        finally
+        {
+            try { if (rset != null) rset.close(); } catch (Exception e) {System.out.println(e.getMessage());}
+            try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(e.getMessage());}
+        }
+    }
+
+    public void getReport31(String city)
+    {
+
+        ResultSet rset = null;
+        Statement stmt = null;
+        Long districtpop = null;
+
+
+        try
+        {
+            if(city == null)
+            {
+                throw new RuntimeException("Report 30 Exception - City Input is NULL");
+            }
+
+            // Create an SQL statement
+            stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT sum(city.population) "
+                            + "FROM city "
+                            + "WHERE city.name ='" + city + "' ";
+
+            // Execute SQL statement
+            rset = stmt.executeQuery(strSelect);
+            // Extract employee information
+            while (rset.next())
+            {
+                districtpop = rset.getLong("sum(city.population)");
+            }
+
+            System.out.printf("\u001B[32m %n%s%n%n","A Report on the population of the world.");
+            System.out.printf("\u001B[34m%-20s %-20s%n", "City", "Total Population");
+            System.out.printf("\u001B[37m%-20s %-20s%n", "==============", "================");
+            System.out.printf("%-20s %-20s%n", city, districtpop);
+
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country details");
+        }
+        finally
+        {
+            try { if (rset != null) rset.close(); } catch (Exception e) {System.out.println(e.getMessage());}
+            try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(e.getMessage());}
+        }
+    }
 }
