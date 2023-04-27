@@ -1,5 +1,5 @@
 package com.napier.sem;
-//Hopefully I can get this one updated too
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -96,6 +96,9 @@ public class App
 
         String continent = "Europe";
         String region = "Western Europe";
+        String country = "China";
+        String district = "Casablanca";
+        String city = "New York";
         int n = 10;
 
 
@@ -114,7 +117,6 @@ public class App
         report6To9.getReport8();// report on All the cities in a continent  in the world by population from largest to smallest
         report6To9.getReport9();//report on All the cities in a region  in the world organised by population from the largest to the smallest
 
-
         //Report 10 to 13 done by Damian Daley
         Report10To13 report10to13 = new Report10To13();
         report10to13.getReport10(); //produce a report on All the cities in a country organized by largest population to smallest
@@ -129,16 +131,31 @@ public class App
         report14to17.getReport16();//produced a report on the top N populated cities in a district where N is provided by the user.
         report14to17.getReport17();//produced a report on all the capital cities in the world organised by largest population to smallest.
 
+        Report18To21 Report18To21 = new Report18To21();
+        Report18To21.getReport18(continent);
+        Report18To21.getReport19(region);
+        Report18To21.getReport20(n);
+        Report18To21.getReport21(continent, n);
+
+        Report22To25 report22To25 = new Report22To25();
+        report22To25.getReport22(region, n);
+        report22To25.getReport23();
+        report22To25.getReport24();
+        report22To25.getReport25();
+
+        Report26To31 report26To31 = new Report26To31();
+        report26To31.getReport26();
+        report26To31.getReport27(continent);
+        report26To31.getReport28(region);
+        report26To31.getReport29(country);
+        report26To31.getReport30(district);
+        report26To31.getReport31(city);
 
         ReportLanguages reportLanguages = new ReportLanguages();
         reportLanguages.getReportLanguages();
 
-
         // Disconnect from database
         a.disconnect();
-
-
-
     }
 
 }
