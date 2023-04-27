@@ -158,7 +158,4 @@ public class AppIntegrationTest1to5
         Report26To31 report26To31 = new Report26To31();
         report26To31.getReport31(city);
     }
-
-
-
 }

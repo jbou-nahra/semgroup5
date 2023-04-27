@@ -94,7 +94,7 @@ public class Report26To31 {
                 continentpop = rset.getLong("sum(country.population)");
             }
 
-            System.out.printf("\u001B[32m %n%s%n%n","A Report on the population of the world.");
+            System.out.printf("\u001B[32m %n%s%n%n","A Report on the population a continent");
             System.out.printf("\u001B[34m%-20s %-20s%n", "Continent", "Total Population");
             System.out.printf("\u001B[37m%-20s %-20s%n", "==============", "================");
             System.out.printf("%-20s %-20s%n", continent, continentpop);
@@ -142,7 +142,7 @@ public class Report26To31 {
                 regionpop = rset.getLong("sum(country.population)");
             }
 
-            System.out.printf("\u001B[32m %n%s%n%n","A Report on the population of the world.");
+            System.out.printf("\u001B[32m %n%s%n%n","A Report on the population a region.");
             System.out.printf("\u001B[34m%-20s %-20s%n", "Region", "Total Population");
             System.out.printf("\u001B[37m%-20s %-20s%n", "==============", "================");
             System.out.printf("%-20s %-20s%n", region, regionpop);
@@ -190,7 +190,7 @@ public class Report26To31 {
                 countriespop = rset.getLong("country.population");
             }
 
-            System.out.printf("\u001B[32m %n%s%n%n","A Report on the population of the world.");
+            System.out.printf("\u001B[32m %n%s%n%n","A Report on the population of a country.");
             System.out.printf("\u001B[34m%-20s %-20s%n", "Country", "Total Population");
             System.out.printf("\u001B[37m%-20s %-20s%n", "==============", "================");
             System.out.printf("%-20s %-20s%n", country, countriespop);
@@ -238,7 +238,7 @@ public class Report26To31 {
                 districtpop = rset.getLong("sum(city.population)");
             }
 
-            System.out.printf("\u001B[32m %n%s%n%n","A Report on the population of the world.");
+            System.out.printf("\u001B[32m %n%s%n%n","A Report on the population of a district.");
             System.out.printf("\u001B[34m%-20s %-20s%n", "District", "Total Population");
             System.out.printf("\u001B[37m%-20s %-20s%n", "==============", "================");
             System.out.printf("%-20s %-20s%n", district, districtpop);
@@ -268,7 +268,7 @@ public class Report26To31 {
         {
             if(city == null)
             {
-                throw new RuntimeException("Report 30 Exception - City Input is NULL");
+                throw new RuntimeException("Report 31 Exception - City Input is NULL");
             }
 
             // Create an SQL statement
@@ -287,7 +287,7 @@ public class Report26To31 {
                 districtpop = rset.getLong("sum(city.population)");
             }
 
-            System.out.printf("\u001B[32m %n%s%n%n","A Report on the population of the world.");
+            System.out.printf("\u001B[32m %n%s%n%n","A Report on the population of a city.");
             System.out.printf("\u001B[34m%-20s %-20s%n", "City", "Total Population");
             System.out.printf("\u001B[37m%-20s %-20s%n", "==============", "================");
             System.out.printf("%-20s %-20s%n", city, districtpop);
