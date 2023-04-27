@@ -1,7 +1,6 @@
 package com.napier.sem;
 
 import java.sql.*;
-import java.util.ArrayList;
 
 public class App
 {
@@ -127,7 +126,7 @@ public class App
         Report14To17 report14to17 = new Report14To17();
         report14to17.getReport14(); //produced a report the top N populated cities in a region where N is provided by the user.
         report14to17.getReport15();//produced a report on the top N populated cities in a country where N is provided by the user.
-        report14to17.getReport16();//produced a report on the top N populated cities in a district where N is provided by the user.
+        report14to17.getReport16(2);//produced a report on the top N populated cities in a district where N is provided by the user.
         report14to17.getReport17();//produced a report on all the capital cities in the world organised by largest population to smallest.
 
 

@@ -58,7 +58,7 @@ public class City {
         }
     }
 
-    public void printReport(ArrayList<City> cities)
+    public static void printReport(ArrayList<City> cities)
     {
 
         System.out.printf("%n%n%-30s %-30s %-30s %-30s", "City Name", "Country Name", " District", "Population");
