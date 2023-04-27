@@ -18,4 +18,11 @@ public class Test1to5
     {
         assertEquals(5, 5);
     }
+
+    @Test
+    void getReport31null()
+    {
+        Report26To31 report26To31 = new Report26To31();
+        report26To31.getReport31(null);
+    }
 }
