@@ -106,9 +106,9 @@ public class AppIntegrationTest1to5
     @Test
     void getReport28function()
     {
-        String region = " Western Europe";
+        String region = "Western Europe";
         Report26To31 report26To31 = new Report26To31();
-        report26To31.getReport27(region);
+        report26To31.getReport28(region);
     }
 
     @Test
@@ -141,6 +141,14 @@ public class AppIntegrationTest1to5
         String continent = "Europe";
         Report18To21 Report18To21 = new Report18To21();
         Report18To21.getReport18(continent);
+    }
+
+    @Test
+    void getReport19function()
+    {
+        String region = "Western Europe";
+        Report18To21 Report18To21 = new Report18To21();
+        Report18To21.getReport19(region);
     }
 
 }

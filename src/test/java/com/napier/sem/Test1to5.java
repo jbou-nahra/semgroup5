@@ -71,6 +71,20 @@ public class Test1to5
     }
 
     @Test
+    void getReport18null()
+    {
+        Report18To21 Report18To21 = new Report18To21();
+        Report18To21.getReport18(null);
+    }
+
+    @Test
+    void getReport19null()
+    {
+        Report18To21 Report18To21 = new Report18To21();
+        Report18To21.getReport19(null);
+    }
+
+    @Test
     void getReport20int0()
     {
         Report18To21 Report18To21 = new Report18To21();
@@ -127,5 +141,4 @@ public class Test1to5
         Report26To31 report26To31 = new Report26To31();
         report26To31.getReport30(null);
     }
-
 }
