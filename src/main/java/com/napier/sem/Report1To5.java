@@ -67,6 +67,7 @@ public class Report1To5 {
             try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(e.getMessage());}
         }
 
+
     }
 
     public void getReport2(String continent)
