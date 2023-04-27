@@ -53,10 +53,34 @@ public class AppIntegrationTest1to5
     }
 
     @Test
+    void getReport18function()
+    {
+        String continent = "Europe";
+        Report18To21 Report18To21 = new Report18To21();
+        Report18To21.getReport18(continent);
+    }
+
+    @Test
+    void getReport19function()
+    {
+        String region = "Western Europe";
+        Report18To21 Report18To21 = new Report18To21();
+        Report18To21.getReport19(region);
+    }
+
+    @Test
     void getReport20function()
     {
         Report18To21 Report18To21 = new Report18To21();
         Report18To21.getReport20(1);
+    }
+
+    @Test
+    void getReport21function()
+    {
+        String continent = "Europe";
+        Report18To21 Report18To21 = new Report18To21();
+        Report18To21.getReport21(continent, 1);
     }
 
     @Test
@@ -135,20 +159,6 @@ public class AppIntegrationTest1to5
         report26To31.getReport31(city);
     }
 
-    @Test
-    void getReport18function()
-    {
-        String continent = "Europe";
-        Report18To21 Report18To21 = new Report18To21();
-        Report18To21.getReport18(continent);
-    }
 
-    @Test
-    void getReport19function()
-    {
-        String region = "Western Europe";
-        Report18To21 Report18To21 = new Report18To21();
-        Report18To21.getReport19(region);
-    }
 
 }

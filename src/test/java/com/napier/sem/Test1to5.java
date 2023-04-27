@@ -92,6 +92,22 @@ public class Test1to5
     }
 
     @Test
+    void getReport21int0()
+    {
+        String continent = "Western Europe";
+        Report22To25 report22To25 = new Report22To25();
+        report22To25.getReport22(continent, 0);
+    }
+
+    @Test
+    void getReportnull()
+    {
+        String continent = "Western Europe";
+        Report22To25 report22To25 = new Report22To25();
+        report22To25.getReport22(null, 1);
+    }
+
+    @Test
     void getReport22int0()
     {
         String region = "Europe";
