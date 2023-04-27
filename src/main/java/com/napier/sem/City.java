@@ -1,5 +1,5 @@
 package com.napier.sem;
-//yor this one
+
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -72,5 +72,20 @@ public class City {
         }
     }
 
+    static public void printcapitalcity(ArrayList<City> cities, String reportDes)
+    {
+
+        System.out.printf ( "\u001B[32m %n%s%n%n", reportDes);
+        System.out.printf("\u001B[34m%-30s %-30s %-30s %n", "City Name", "Country Name", "Population");
+        System.out.printf("\u001B[37m%-30s %-30s %-30s %n", "=========", "============", "==========");
+
+        for (City city : cities)
+        {
+            System.out.printf("%-30s %-30s %-30s %n",
+                    city.city_name, city.country_name, city.population);
+
+        }
+    }
+        // I need this file to be updated.
 
 }
