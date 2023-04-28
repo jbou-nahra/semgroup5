@@ -75,6 +75,14 @@ public class AppIntegrationTest10to13
 
     }
 
+    @Test
+    void reportlanguagesfunction()
+    {
+        ReportLanguages reportLanguages = new ReportLanguages();
+        reportLanguages.getReportLanguages();
+    }
+
+
 
 
 

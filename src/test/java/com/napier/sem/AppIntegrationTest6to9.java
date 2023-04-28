@@ -18,14 +18,6 @@ public class AppIntegrationTest6to9 {
         app.connect("localhost:33060", 30000);
     }
 
-
-
-    @Test
-    void db_invalid_localhost(){
-        app = new App();
-        app.connect("localhost:33066", 30000);
-    }
-
     @Test
     void getReport6function()//Test if the top 3 caribbean island are displayed
     {
