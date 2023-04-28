@@ -50,42 +50,38 @@ public class City {
         System.out.printf("\u001B[34m%-30s %-30s %-30s %-30s%n", "City Name", "Country Name", " District", "Population");
         System.out.printf("\u001B[37m%-30s %-30s %-30s %-30s%n", "=========", "============", " ========", "==========");
 
+        if (cities != null )
         for (City city : cities)
         {
-            System.out.printf("%-30s %-30s %-30s %-30s%n",
-                    city.city_name, city.country_name, city.district, city.population);
+            if( city != null )
+            {
+                System.out.printf("%-30s %-30s %-30s %-30s%n",
+                        city.city_name, city.country_name, city.district, city.population);
+            }
 
         }
     }
-
-    public void printReport(ArrayList<City> cities)
+/*
+    static public void printReport(ArrayList<City> cities)
     {
 
         System.out.printf("%n%n%-30s %-30s %-30s %-30s", "City Name", "Country Name", " District", "Population");
         System.out.printf("%n%-30s %-30s %-30s %-30s%n", "=========", "============", " ========", "==========");
 
+
+        // If cities not null, then go ahead and print the information
+        if (cities != null )
         for (City city : cities)
         {
-            System.out.printf("%-30s %-30s %-30s %-30s%n",
-                    city.city_name, city.country_name, city.district, city.population);
+
+            if( city != null )
+            {
+                System.out.printf("%-30s %-30s %-30s %-30s%n",
+                        city.city_name, city.country_name, city.district, city.population);
+            }
 
         }
     }
-
-    static public void printcapitalcity(ArrayList<City> cities, String reportDes)
-    {
-
-        System.out.printf ( "\u001B[32m %n%s%n%n", reportDes);
-        System.out.printf("\u001B[34m%-30s %-30s %-30s %n", "City Name", "Country Name", "Population");
-        System.out.printf("\u001B[37m%-30s %-30s %-30s %n", "=========", "============", "==========");
-
-        for (City city : cities)
-        {
-            System.out.printf("%-30s %-30s %-30s %n",
-                    city.city_name, city.country_name, city.population);
-
-        }
-    }
-        // I need this file to be updated.
+*/
 
 }
