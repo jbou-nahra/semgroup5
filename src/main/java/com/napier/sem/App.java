@@ -94,6 +94,7 @@ public class App
             a.connect(args[0], Integer.parseInt(args[1]));
         }
 
+        ArrayList<City> cities = new ArrayList<>();
         String continent = "Europe";
         String region = "Western Europe";
         String country = "China";
@@ -119,11 +120,17 @@ public class App
 
         //Report 10 to 13 done by Damian Daley
         Report10To13 report10to13 = new Report10To13();
-        report10to13.getReport10(); //produce a report on All the cities in a country organized by largest population to smallest
-        report10to13.getReport11(); // produce a report on All the cities in a district organized by largest population to smallest
-        report10to13.getReport12(); //produce a report on The Top N populated cities in the world where N is provided by the user
-        report10to13.getReport13(); //produce a report on The Top N populated cities in the continent where N is provided by the user
+        cities = report10to13.getReport10("United Kingdom"); //produce a report on All the cities in a country organized by largest population to smallest
+        City.printReport(cities);
 
+        cities = report10to13.getReport11("England"); // produce a report on All the cities in a district organized by largest population to smallest
+        City.printReport(cities);
+
+        cities = report10to13.getReport12(10); //produce a report on The Top N populated cities in the world where N is provided by the user
+        City.printReport(cities);
+
+        cities = report10to13.getReport13(10, "Africa"); //produce a report on The Top N populated cities in the continent where N is provided by the user
+        City.printReport(cities);
         //Report 14 to 17 done by Nesreen Tittle
         Report14To17 report14to17 = new Report14To17();
         report14to17.getReport14(); //produced a report the top N populated cities in a region where N is provided by the user.

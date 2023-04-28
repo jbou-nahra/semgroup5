@@ -16,7 +16,9 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Unit Tests
-        run: mvn -Dtest=com.napier.sem.Test1to5 test
+        run: |
+          mvn -Dtest=com.napier.sem.Test1to5 test
+          mvn -Dtest=com.napier.sem.Test10to13 test
       - name: CodeCov
         uses: codecov/codecov-action@v2
         with:
