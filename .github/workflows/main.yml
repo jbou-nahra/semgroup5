@@ -48,6 +48,7 @@ jobs:
           mvn -Dtest=com.napier.sem.AppIntegrationTest1to5 test
           mvn -Dtest=com.napier.sem.AppIntegrationTest6to9 test
           mvn -Dtest=com.napier.sem.AppIntegrationTest10to13 test
+          mvn -Dtest=com.napier.sem.AppIntegrationTest14to17 test
           docker stop employees
           docker rm employees
           docker image rm database
