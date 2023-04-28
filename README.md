@@ -12,37 +12,37 @@ Release: [![Releases](https://img.shields.io/github/release/jbou-nahra/semgroup5
 
 Code Coverage: [![codecov](https://codecov.io/gh/jbou-nahra/semgroup5/branch/feature/UnitTest1-5/graph/badge.svg?token=TEFGU8TR44)](https://codecov.io/gh/jbou-nahra/semgroup5)
 
-| ID  | Name | Met | ScreenShot                        |
-|-----|------|-----|-----------------------------------|
-| 1   | All the countries in the world organised by largest population to smallest.     | Yes | <img src = "/images/report1.jpg"> |
-| 2   |      |     |                                   |
-| 3   |      |     |                                   |
-| 4   |      |     |                                   |
-| 5   |      |     |                                   |
-| 6   |      |     |                                   |
-| 7   |      |     |                                   |
-| 8   |      |     |                                   |
-| 9   |      |     |                                   |
-| 10  |      |     |                                   |
-| 11  |      |     |                                   |
-| 12  |      |     |                                   |
-| 13  |      |     |                                   |
-| 14  |      |     |                                   |
-| 15  |      |     |                                   |
-| 16  |      |     |                                   |
-| 17  |      |     |                                   |
-| 18  |      |     |                                   |
-| 19  |      |     |                                   |
-| 20  |      |     |                                   |
-| 21  |      |     |                                   |
-| 22  |      |     |                                   |
-| 23  |      |     |                                   |
-| 24  |      |     |                                   |
-| 25  |      |     |                                   |
-| 26  |      |     |                                   |
-| 27  |      |     |                                   |
-| 28  |      |     |                                   |
-| 29  |      |     |                                   |
-| 30  |      |     |                                   |
-| 31  |      |     |                                   |
- | 32  |      |     |                                   |
+| ID  | Name | Met | ScreenShot                                              |
+|-----|------|-----|---------------------------------------------------------|
+| 1   | All the countries in the world organised by largest population to smallest.     | Yes | <img src = "images/report1.jpg" style= "width: 100px"/> |
+| 2   | All the countries in a continent organised by largest population to smallest.   | Yes | <img src = "images/report2.jpg" style= "width: 100px"/>                      |
+| 3   |      |     |                                                         |
+| 4   |      |     |                                                         |
+| 5   |      |     |                                                         |
+| 6   |      |     |                                                         |
+| 7   |      |     |                                                         |
+| 8   |      |     |                                                         |
+| 9   |      |     |                                                         |
+| 10  |      |     |                                                         |
+| 11  |      |     |                                                         |
+| 12  |      |     |                                                         |
+| 13  |      |     |                                                         |
+| 14  |      |     |                                                         |
+| 15  |      |     |                                                         |
+| 16  |      |     |                                                         |
+| 17  |      |     |                                                         |
+| 18  |      |     |                                                         |
+| 19  |      |     |                                                         |
+| 20  |      |     |                                                         |
+| 21  |      |     |                                                         |
+| 22  |      |     |                                                         |
+| 23  |      |     |                                                         |
+| 24  |      |     |                                                         |
+| 25  |      |     |                                                         |
+| 26  |      |     |                                                         |
+| 27  |      |     |                                                         |
+| 28  |      |     |                                                         |
+| 29  |      |     |                                                         |
+| 30  |      |     |                                                         |
+| 31  |      |     |                                                         |
+ | 32  |      |     |                                                         |
