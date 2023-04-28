@@ -12,17 +12,17 @@ Release: [![Releases](https://img.shields.io/github/release/jbou-nahra/semgroup5
 
 Code Coverage: [![codecov](https://codecov.io/gh/jbou-nahra/semgroup5/branch/feature/UnitTest1-5/graph/badge.svg?token=TEFGU8TR44)](https://codecov.io/gh/jbou-nahra/semgroup5)
 
-| ID  | Name                                                                                                                                           | Met | ScreenShot                                               |
-|-----|------------------------------------------------------------------------------------------------------------------------------------------------|-----|----------------------------------------------------------|
-| 1   | All the countries in the world organised by largest population to smallest.                                                                    | Yes | <img src = "images/report1.JPG" style= "width: 100px"/>  |
-| 2   | All the countries in a continent organised by largest population to smallest.                                                                  | Yes | <img src = "images/report2.JPG" style= "width: 100px"/>  |
-| 3   | All the countries in a region organised by largest population to smallest                                                                      | Yes | <img src = "images/report3.JPG" style= "width: 100px"/>  |
-| 4   | The top N populated countries in the world where N is provided by the user.                                                                    | Yes | <img src = "images/report4.JPG" style= "width: 100px"/>  |
-| 5   | The top N populated countries in a continent where N is provided by the user.                                                                  | Yes | <img src = "images/report5.JPG" style= "width: 100px"/>  |
-| 6   | The top N populated countries in a region where N is provided by the user.                                                                     | Yes | <img src = "images/report6.JPG" style= "width: 100px"/>  |
-| 7   | All the cities in the world organised by largest population to smallest.                                                                       | Yes | <img src = "images/report7.JPG" style= "width: 100px"/>  |
-| 8   | All the cities in a continent organised by largest population to smallest.                                                                     | Yes | <img src = "images/report8.JPG" style= "width: 100px"/>  |
-| 9   | All the cities in a region organised by largest population to smallest.                                                                        | Yes | <img src = "images/report9.JPG" style= "width: 100px"/>  |
+| ID  | Name                                                                                                                                           | Met | ScreenShot                         |
+|-----|------------------------------------------------------------------------------------------------------------------------------------------------|-----|------------------------------------|
+| 1   | All the countries in the world organised by largest population to smallest.                                                                    | Yes | <img src = "images/report1.JPG" style= "width: 100px"/> |
+| 2   | All the countries in a continent organised by largest population to smallest.                                                                  | Yes | <img src = "images/report2.JPG" style= "width: 100px"/> |
+| 3   | All the countries in a region organised by largest population to smallest                                                                      | Yes | <img src = "images/report3.JPG" style= "width: 100px"/> |
+| 4   | The top N populated countries in the world where N is provided by the user.                                                                    | Yes | <img src = "images/report4.JPG" style= "width: 100px"/> |
+| 5   | The top N populated countries in a continent where N is provided by the user.                                                                  | Yes | <img src = "images/report5.JPG" style= "width: 100px"/> |
+| 6   | The top N populated countries in a region where N is provided by the user.                                                                     | Yes | <img src = "images/report6.JPG" style= "width: 100px"/> |
+| 7   | All the cities in the world organised by largest population to smallest.                                                                       | Yes | <img src = "images/report7.JPG" style= "width: 100px"/> |
+| 8   | All the cities in a continent organised by largest population to smallest.                                                                     | Yes | <img src = "images/report8.JPG" style= "width: 100px"/> |
+| 9   | All the cities in a region organised by largest population to smallest.                                                                        | Yes | <img src = "images/report9.JPG" style= "width: 100px"/> |
 | 10  | All the cities in a country organised by largest population to smallest.                                                                       | Yes | <img src = "images/report10.JPG" style= "width: 100px"/> |
 | 11  | All the cities in a district organised by largest population to smallest.                                                                      | Yes | <img src = "images/report11.JPG" style= "width: 100px"/> |
 | 12  | The top N populated cities in the world where N is provided by the user.                                                                       | Yes | <img src = "images/report12.JPG" style= "width: 100px"/> |
@@ -45,4 +45,4 @@ Code Coverage: [![codecov](https://codecov.io/gh/jbou-nahra/semgroup5/branch/fea
 | 29  | The population of a country.                                                                                                                   | Yes | <img src = "images/report29.JPG" style= "width: 100px"/> |
 | 30  | The population of a district.                                                                                                                  | Yes | <img src = "images/report30.JPG" style= "width: 100px"/> |
 | 31  | The population of a city.                                                                                                                      | Yes | <img src = "images/report31.JPG" style= "width: 100px"/> |
- | 32  | provide the number of people who speak Chinese, English, Hindi, Spanish and Arabic from greatest to smallest including population of the world. | Yes | <img src = "images/report32.JPG" style= "width: 100px"/> |
+ | 32  | provide the number of people who speak Chinese, English, Hindi, Spanish and Arabic from greatest to smallest including population of the world. | Yes | <img src = "images/report32.JPG"/> |
