@@ -8,7 +8,7 @@ License: [![LICENSE](https://img.shields.io/github/license/jbou-nahra/semgroup5.
 
 Release: [![Releases](https://img.shields.io/github/release/jbou-nahra/semgroup5/all.svg?style=flat-square)](https://github.com/jbou-nahra/semgroup5/releases)
 
-Code Coverage: [![codecov](https://codecov.io/gh/jbou-nahra/semgroup5/branch/feature/UnitTest1-5/graph/badge.svg?token=TEFGU8TR44)](https://codecov.io/gh/jbou-nahra/semgroup5)
+Code Coverage: [![codecov](https://codecov.io/gh/jbou-nahra/semgroup5/branch/master/graph/badge.svg?token=TEFGU8TR44)](https://codecov.io/gh/jbou-nahra/semgroup5)
 
 
 32 requirements out of 32 have been implemented, which is 100%!
