@@ -1,4 +1,4 @@
-# USE CASE: 9  produce a report on All the cities in a region in the world organised by population from the largest to the smallest 
+# USE CASE: 9  produce **a report on All the cities in a region in the world organised by population from the largest to the smallest** 
 
 ## CHARACTERISTIC INFORMATION
 

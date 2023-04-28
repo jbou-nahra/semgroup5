@@ -129,7 +129,7 @@ public class Report14To17 {
     }
 
 
-    public void getReport16() {
+    public void getReport16(int i) {
         ResultSet rset = null;
         Statement stmt = null;
         int n = 10;
