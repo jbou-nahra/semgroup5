@@ -11,7 +11,7 @@ Release: [![Releases](https://img.shields.io/github/release/jbou-nahra/semgroup5
 Code Coverage: [![codecov](https://codecov.io/gh/jbou-nahra/semgroup5/branch/feature/UnitTest1-5/graph/badge.svg?token=TEFGU8TR44)](https://codecov.io/gh/jbou-nahra/semgroup5)
 
 
-32 requirements out of 32 have been implemented, which is 100%.
+32 requirements out of 32 have been implemented, which is 100%!
 
 | ID  | Name                                                                                                                                           | Met | ScreenShot                           |
 |-----|------------------------------------------------------------------------------------------------------------------------------------------------|-----|--------------------------------------|
