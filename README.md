@@ -14,7 +14,7 @@ Code Coverage: [![codecov](https://codecov.io/gh/jbou-nahra/semgroup5/branch/fea
 
 | ID  | Name | Met | ScreenShot                        |
 |-----|------|-----|-----------------------------------|
-| 1   | All the countries in the world organised by largest population to smallest.     | Yes | <img src = "images/report1.jpg"/> |
+| 1   | All the countries in the world organised by largest population to smallest.     | Yes | <img src = "images\report1.jpg"/> |
 | 2   |      |     |                                   |
 | 3   |      |     |                                   |
 | 4   |      |     |                                   |
